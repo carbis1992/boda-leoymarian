@@ -1,0 +1,19 @@
+// Colores de la Boda (Ejemplo: Paleta Boho/Elegante)
+$color-primary: #859f84; // Verde eucalipto
+$color-secondary: #d4af37; // Dorado
+$color-dark: #2c3e50; // Gris oscuro para textos
+$color-light: #fdfbf7; // Blanco roto para fondos
+$color-white: #ffffff;
+
+// Tipografías
+$font-title: 'Playfair Display', serif;
+$font-body: 'Montserrat', sans-serif;
+
+// Breakpoints para Responsive (Enfoque Móvil Primero)
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Espaciados uniformes
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;

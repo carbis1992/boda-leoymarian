@@ -1,0 +1,21 @@
+@use './variables' as *;
+// Mixin para pantallas medianas (Tablets)
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+// Mixin para pantallas grandes (Escritorio)
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// Flexbox / Grid rápido y centrado (Muy útil para móviles)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
