@@ -239,7 +239,6 @@ const copyToClipboard = async (text, type) => {
 
     &--success {
       color: $color-primary !important;
-      background: #eef7f1 !important;
     }
   }
 
