@@ -80,7 +80,7 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
     font-weight: 500;
     letter-spacing: 0.05em;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.25);
+    box-shadow: 0 4px 15px rgba(129, 81, 19, 0.25);
   }
 
   &__spotify-icon {
