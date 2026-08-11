@@ -1,18 +1,12 @@
 <template>
-  <!-- El ID 'event-details' es obligatorio para que funcione el scroll del Hero -->
   <section id="event-details" class="details">
     <div class="details__container">
-      <h2 class="details__title">CIVIL Y FIESTA</h2>
-      <p class="details__subtitle">Información importante</p>
+      <h2 class="details__title">CEREMONIA</h2>
 
-      <!-- <div class="details__grid"> -->
-      <h3 class="details__card-title">La Ceremonia</h3>
-      <p class="details__time">19:00 HS</p>
+      <p class="details__card-title">06 de Febrero 2027 19:00hs</p>
       <p class="details__place-name">Campos de Ibarlucea</p>
       <div class="details__address_copy">
-        <p class="details__address_copy__address">
-          25 de Mayo 5306 34s, Ibarlucea, Santa Fe, Argentina
-        </p>
+        <p class="details__address_copy__address">25 de Mayo 5306 34s, Ibarlucea, Santa Fe</p>
         <button @click="copyAddress(addressCeremonia, 'ceremonia')" class="details__copy-btn">
           <svg
             v-if="!copiedStatus.ceremonia"
@@ -30,7 +24,6 @@
             />
           </svg>
 
-          <!-- Icono de Check (Cuando ya se ha copiado con éxito) -->
           <svg
             v-else
             xmlns="http://w3.org"
@@ -48,15 +41,12 @@
         ¿Cómo llegar?
       </a>
     </div>
-    <!-- </div> -->
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 
-// Rutas de Google Maps universales. El navegador/móvil se encarga de abrir la App nativa.
-// TIP: Reemplaza los espacios por símbolos '+' para asegurar que la URL sea 100% válida.
 const mapsUrl = ref(
   'https://www.google.com/maps/place/Campos+de+Ibarlucea./@-32.8531585,-60.7632909,17z/data=!3m1!4b1!4m6!3m5!1s0x95b651e73eac728b:0x96d38fa9f42ccf70!8m2!3d-32.853163!4d-60.760716!16s%2Fg%2F11cs17bxjl?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D',
 )
@@ -71,7 +61,6 @@ const copyAddress = async (text, key) => {
     await navigator.clipboard.writeText(text)
     copiedStatus.value[key] = true
 
-    // El mensaje de "¡Copiado!" vuelve a la normalidad tras 2.5 segundos
     setTimeout(() => {
       copiedStatus.value[key] = false
     }, 2500)
@@ -82,27 +71,26 @@ const copyAddress = async (text, key) => {
 </script>
 
 <style lang="scss" scoped>
-/* Las variables y mixins ya están inyectados por Vite */
-
 .details {
-  @include flex-center; // ¡Ya puedes usar los mixins directamente!
-  min-height: 100vh;
+  @include flex-center;
   width: 100%;
   text-align: center;
   background-color: $color-light;
   position: relative;
 
   &__container {
-    max-width: 1000px;
-    width: 100%;
     text-align: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 8rem 1.2rem;
+    min-height: 50vh;
   }
 
   &__title {
     font-size: 2.2rem;
     font-weight: 300;
-    margin-bottom: 0.5rem;
-    color: $color-dark;
+    margin-bottom: 2rem;
+    color: $color-primary;
 
     @include tablet {
       font-size: 3rem;
@@ -115,32 +103,30 @@ const copyAddress = async (text, key) => {
   }
 
   &__time {
-    font-weight: 600;
+    // font-weight: 600;
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
   }
 
   &__place-name {
-    font-size: 1.1rem;
     margin-bottom: 0.25rem;
-    color: $color-dark;
+    color: $color-primary;
   }
 
   &__address_copy {
-    // Corregido (2 guiones)
+    display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    column-gap: 0.3rem;
+    min-width: max-content;
     &__address {
-      // Ojo: BEM estricto sugiere no anidar elementos así, pero compilará como .details__address_copy__address
       font-size: 0.9rem;
-      margin-bottom: 2rem;
-      line-height: 1.4;
     }
   }
 
   &__copy-btn {
-    width: 25px;
-    color: gray;
+    width: 18px;
+    color: $color-primary;
     background: none;
     border: none;
   }
@@ -150,8 +136,9 @@ const copyAddress = async (text, key) => {
     width: 100%;
     max-width: 200px;
     padding: 0.8rem 1.5rem;
-    background-color: $color-dark;
+    background-color: $color-primary;
     color: $color-light;
+    margin-top: 2rem;
     text-decoration: none;
     border-radius: 25px;
     font-size: 0.9rem;

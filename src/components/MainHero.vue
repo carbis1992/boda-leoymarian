@@ -1,18 +1,9 @@
 <template>
   <section class="hero">
     <div class="hero__content">
-      <!-- Nombres de los novios -->
-      <h1 class="hero__title">Leonela & Mariano</h1>
+      <h1 class="hero__title">LM</h1>
       <p class="hero__subtitle">¡Nos casamos!</p>
 
-      <!-- Detalles clave del evento -->
-      <div class="hero__details">
-        <span class="hero__date">06 de Febrero 2027</span>
-        <span class="hero__divider">|</span>
-        <span class="hero__location">Campos de Ibarlucea</span>
-      </div>
-
-      <!-- Cuenta regresiva dinámica -->
       <div class="hero__countdown countdown">
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.days }}</span>
@@ -33,7 +24,6 @@
       </div>
     </div>
 
-    <!-- BOTÓN DE SCROLL HACIA ABAJO -->
     <button @click="scrollToDetails" class="hero__scroll-btn" aria-label="Ver detalles del evento">
       <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="currentColor" class="hero__arrow-icon">
         <path
@@ -91,10 +81,9 @@ const calculateTimeLeft = () => {
 }
 
 const scrollToDetails = () => {
-  // Buscaremos la sección por su ID (la crearemos en el siguiente componente)
   const detailsSection = document.getElementById('event-details')
   if (detailsSection) {
-    detailsSection.scrollIntoView({ behavior: 'smooth' })
+    detailsSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 }
 
@@ -110,19 +99,31 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-// Hacemos uso de tus variables globales gracias a tu config de Vite
 .hero {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  min-height: 100vh; // Ocupa toda la pantalla del móvil al entrar
+  min-height: 100vh;
   width: 100%;
   text-align: center;
-  background-color: $color-light; // Variable de tu _variables.scss
+  background-color: rgba($color-light, 0.9);
   position: relative;
-  //   background-image: url('/src/assets/img/background.jpg');
+  overflow: hidden;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/src/assets/img/fondowb.jpeg');
+    background-size: cover;
+    opacity: 0.35;
+    z-index: 0;
+  }
 
   &__content {
+    position: relative;
+    z-index: 1;
     max-width: 600px;
     width: 100%;
     padding: 2rem;
@@ -132,8 +133,7 @@ onUnmounted(() => {
     font-size: 3rem;
     font-weight: 300;
     margin-bottom: 0.5rem;
-
-    // Ejemplo de uso de tu mixin para responsive design
+    color: $color-primary;
     @include tablet {
       font-size: 4.5rem;
     }
@@ -144,74 +144,71 @@ onUnmounted(() => {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     background-color: color-mix(in srgb, var(--color-dark), white 10%);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    color: $color-primary;
   }
 
-  &__details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 4rem;
-
-    @media (max-width: 480px) {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  }
-
-  &__divider {
-    background-color: color-mix(in srgb, var(--color-dark), white 10%);
-    @media (max-width: 480px) {
-      display: none; // Escondemos la barra en móviles verticales
-    }
-  }
   &__scroll-btn {
     position: absolute;
-    bottom: 2rem;
+    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
     background: transparent;
     border: none;
     cursor: pointer;
     background-color: color-mix(in srgb, var(--color-dark), white 10%);
     padding: 0.5rem;
     transition: color 0.3s ease;
-    animation: bounce 2s infinite; // Animación de rebote
+    animation: hero-bounce 2s ease-in-out infinite;
+    will-change: transform;
+    pointer-events: auto;
 
     &:hover {
-      color: $color-dark;
+      color: $color-primary;
     }
   }
 
   &__arrow-icon {
     width: 32px;
     height: 32px;
+    color: $color-primary;
   }
 }
 
-// Estilos del contenedor del contador
+@keyframes hero-bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
 .countdown {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin: 0 auto;
-  max-width: 450px;
+  max-width: 290px;
+  margin-bottom: 2rem;
 
   &__item {
-    background-color: rgba($color-dark, 0.03); // Fondo sutil
-    padding: 1rem 0.5rem;
+    background-color: $color-primary;
+    color: $color-light;
+    padding: 0.5rem;
     border-radius: 8px;
     border: 1px solid rgba($color-dark, 0.08);
+    opacity: 0.6;
   }
 
   &__number {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: $color-dark;
+    color: $color-light;
 
     @include tablet {
       font-size: 2.5rem;
@@ -220,7 +217,7 @@ onUnmounted(() => {
 
   &__label {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     background-color: color-mix(in srgb, var(--color-dark), white 10%);
@@ -228,7 +225,6 @@ onUnmounted(() => {
   }
 }
 
-// Animación de rebote sutil para la flecha
 @keyframes bounce {
   0%,
   20%,

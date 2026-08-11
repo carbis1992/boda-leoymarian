@@ -5,7 +5,12 @@
 .thanks_text {
   display: flex;
   justify-content: center;
-  padding: 1rem;
-  background-color: burlywood;
+  padding: 0.5rem 2rem;
+  background-color: $color-primary;
+  color: $color-light;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
 </style>

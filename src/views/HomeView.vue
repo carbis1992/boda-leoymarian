@@ -2,10 +2,11 @@
   <main class="wedding-landing">
     <MainHero />
     <EventDetails />
-    <RsvpSection />
+    <TransportDetails />
     <DressCode />
     <GiftSection />
     <PlaylistSection />
+    <RsvpSection />
     <ThankSection />
   </main>
 </template>
@@ -18,9 +19,5 @@ import DressCode from '@/components/DressCode.vue'
 import GiftSection from '@/components/GiftSection.vue'
 import PlaylistSection from '@/components/PlaylistSection.vue'
 import ThankSection from '@/components/ThankSection.vue'
+import TransportDetails from '@/components/TransportDetails.vue'
 </script>
-
-<style lang="scss">
-// Aquí puedes aplicar estilos estructurales si los necesitas,
-// aunque ya se benefician de tus archivos base cargados globalmente
-</style>

@@ -1,29 +1,22 @@
 <template>
   <section class="dress-code">
     <div class="dress-code__container">
-      <h3 class="dress-code__title">Dress code</h3>
-      <p class="dress-code__subtitle">Formal - Elegante</p>
+      <h3 class="dress-code__title">Traslados</h3>
 
       <div class="dress-code__rules">
         <div class="dress-code__card dress-code__card--do">
-          <h3>Titulo?</h3>
+          <h3>Transportes sugeridos</h3>
           <ul>
-            <li>Trajes oscuros o de etiqueta.</li>
-            <li>Vestidos largos o de cóctel.</li>
-            <li>Colores vivos, alegres o neutros oscuros.</li>
-            <li>
-              El blanco, marfil y los colores pasteles muy claritos están reservados exclusivamente
-              para la novia.
-            </li>
+            <li>Transporte 1</li>
+            <li>Transporte 2</li>
+            <li>Transporte 3</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 </template>
-
 <script setup></script>
-
 <style lang="scss" scoped>
 @use '@/assets/abstracts' as *;
 
@@ -32,7 +25,6 @@
   background-color: $color-background;
   display: flex;
   justify-content: center;
-  // height: 100vh;
   align-items: center;
   color: $color-primary;
   &__container {
@@ -104,6 +96,12 @@
         left: 0;
         color: #8fa89b;
         font-size: 1.2rem;
+      }
+    }
+
+    &--dont {
+      li::before {
+        color: #c97d7d;
       }
     }
   }

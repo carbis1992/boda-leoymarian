@@ -7,23 +7,6 @@
         nos indiques si tienes alguna alergia o restricción alimentaria.
       </p>
 
-      <!-- Opción A: Formulario incrustado directamente en la web (Recomendado por UX) -->
-      <!-- <div class="rsvp-section__form-wrapper">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSf6m3DPHKi7PUgGK0LbmGKEUI9oG7FetnTu-oAGhNPd14gUBw/viewform?usp=publish-editor"
-          width="100%"
-          height="800"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          class="rsvp-section__iframe"
-        >
-          Cargando formulario…
-        </iframe>
-      </div> -->
-
-      <!-- Opción B: Botón externo (Descomenta esto y borra el iframe si prefieres que se abra fuera) -->
-
       <div class="rsvp-section__actions">
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSf6m3DPHKi7PUgGK0LbmGKEUI9oG7FetnTu-oAGhNPd14gUBw/viewform?usp=publish-editor"
@@ -38,14 +21,14 @@
   </section>
 </template>
 
-<script setup>
-// No se necesita lógica compleja de estado ya que Google Forms maneja los datos
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
+@use '@/assets/abstracts' as *;
+
 .rsvp-section {
   padding: 4rem 1.5rem;
-  background-color: #fdfbf7; // Un tono cálido/boda de fondo
+  background-color: $color-background;
   display: flex;
   justify-content: center;
 
@@ -56,15 +39,15 @@
   }
 
   &__title {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 1.5rem;
+    color: $color-primary;
     margin-bottom: 1rem;
-    font-family: serif; // O la fuente elegante de tu proyecto
+    font-family: $font-title;
   }
 
   &__description {
     font-size: 1.1rem;
-    color: #666;
+    color: $color-primary;
     line-height: 1.6;
     margin-bottom: 2.5rem;
   }
@@ -72,7 +55,7 @@
   &__form-wrapper {
     position: relative;
     width: 100%;
-    background: #ffffff;
+    background: $color-light;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
@@ -83,20 +66,17 @@
     display: block;
   }
 
-  // Estilos por si decides usar la Opción B (Botón)
   &__button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background-color: #8fa89b; // Color verde sage / elegante de boda
-    color: white;
+    background-color: $color-primary;
+    color: $color-light;
     text-decoration: none;
     border-radius: 30px;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #768d81;
-    }
   }
 }
 </style>

@@ -1,8 +1,7 @@
 <template>
   <section class="gift-section">
     <div class="gift-section__container">
-      <div class="gift-section__icon-header">🎁</div>
-      <h2 class="gift-section__title">Mesa de Regalos</h2>
+      <h3 class="gift-section__title">REGALO</h3>
 
       <p class="gift-section__description">
         Tu presencia en nuestra boda es el mejor regalo que podríamos pedir. Sin embargo, si deseas
@@ -11,13 +10,11 @@
       </p>
 
       <div class="gift-section__card">
-        <!-- Fila de Titular -->
         <div class="gift-section__info-row">
           <span class="gift-section__label">Titular:</span>
-          <span class="gift-section__value">Nombre de los Novios</span>
+          <span class="gift-section__value" style="font-size: 1rem">Nombre de los Novios</span>
         </div>
 
-        <!-- Fila de Cuenta / IBAN con botón de copiar -->
         <div class="gift-section__info-row">
           <span class="gift-section__label">Cuenta Bancaria (IBAN):</span>
           <div class="gift-section__copy-wrapper">
@@ -28,7 +25,6 @@
               :class="{ 'gift-section__copy-btn--success': copiedStatus.iban }"
               title="Copiar IBAN"
             >
-              <!-- Ícono Dinámico: Check si está copiado, Portapapeles si no -->
               <svg
                 v-if="copiedStatus.iban"
                 xmlns="http://w3.org"
@@ -60,7 +56,6 @@
           </div>
         </div>
 
-        <!-- Fila de Alias / Bizum (Opcional, muy útil en España/LATAM) -->
         <div class="gift-section__info-row">
           <span class="gift-section__label">Alias o Referencia:</span>
           <div class="gift-section__copy-wrapper">
@@ -109,13 +104,11 @@
 <script setup>
 import { ref } from 'vue'
 
-// Modifica estos datos con tu información real
 const bankDetails = ref({
   iban: 'ES21 1234 5678 9012 3456 7890',
   alias: 'boda.novios.2026',
 })
 
-// Control individual para saber qué campo ha sido copiado
 const copiedStatus = ref({
   iban: false,
   alias: false,
@@ -126,7 +119,6 @@ const copyToClipboard = async (text, type) => {
     await navigator.clipboard.writeText(text)
     copiedStatus.value[type] = true
 
-    // Regresa el ícono a la normalidad tras 2 segundos
     setTimeout(() => {
       copiedStatus.value[type] = false
     }, 2000)
@@ -137,12 +129,14 @@ const copyToClipboard = async (text, type) => {
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/abstracts' as *;
+
 .gift-section {
   padding: 5rem 1.5rem;
-  background-color: #fdfbf7; // Tono crema suave de fondo
+  background-color: $color-background;
   display: flex;
   justify-content: center;
-
+  color: $color-primary;
   &__container {
     max-width: 650px;
     width: 100%;
@@ -155,21 +149,23 @@ const copyToClipboard = async (text, type) => {
   }
 
   &__title {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 1.5rem;
+    color: $color-primary;
     margin-bottom: 1.5rem;
-    font-family: serif;
+    font-family: $font-title;
   }
 
   &__description {
     font-size: 1.1rem;
-    color: #666;
     line-height: 1.6;
     margin-bottom: 3rem;
+    color: $color-primary;
   }
 
   &__card {
-    background: #ffffff;
+    background: $color-light;
+    color: $color-primary;
+
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
@@ -178,12 +174,13 @@ const copyToClipboard = async (text, type) => {
   }
 
   &__info-row {
+    color: $color-primary;
+
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 1.2rem 0;
     border-bottom: 1px dashed #eae1d4;
-
     &:last-child {
       border-bottom: none;
       padding-bottom: 0;
@@ -196,20 +193,24 @@ const copyToClipboard = async (text, type) => {
 
   &__label {
     font-size: 0.9rem;
+    color: $color-primary;
+
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #8fa89b; // Verde suave de boda
     font-weight: 600;
   }
 
   &__value {
-    font-size: 1.2rem;
-    color: #444;
+    color: $color-primary;
+    font-size: 0.8rem;
+
     word-break: break-all;
 
     &.font-mono {
-      font-family: monospace;
-      letter-spacing: 0.5px;
+      color: $color-primary;
+
+      font-family: $font-body;
+      letter-spacing: 0.04em;
     }
   }
 
@@ -228,7 +229,7 @@ const copyToClipboard = async (text, type) => {
     background: none;
     border: none;
     cursor: pointer;
-    color: #888;
+    color: $color-primary;
     padding: 0.5rem;
     border-radius: 6px;
     transition: all 0.2s ease;
@@ -236,13 +237,8 @@ const copyToClipboard = async (text, type) => {
     align-items: center;
     justify-content: center;
 
-    &:hover {
-      background: #f0eae1;
-      color: #333;
-    }
-
     &--success {
-      color: #58a375 !important;
+      color: $color-primary !important;
       background: #eef7f1 !important;
     }
   }
@@ -253,7 +249,6 @@ const copyToClipboard = async (text, type) => {
   }
 }
 
-// Adaptación móvil para que las filas no se rompan bruscamente
 @media (min-width: 480px) {
   .gift-section__copy-wrapper {
     flex-grow: 1;

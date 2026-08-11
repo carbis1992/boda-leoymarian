@@ -1,7 +1,6 @@
 <template>
   <section class="playlist-section">
     <div class="playlist-section__container">
-      <div class="playlist-section__icon-header">🎵</div>
       <h2 class="playlist-section__title">¡Ayúdanos con la Música!</h2>
 
       <p class="playlist-section__description">
@@ -9,7 +8,6 @@
         colaborativa en Spotify para que añadas tus canciones favoritas. ¡Dale al play e inspírate!
       </p>
 
-      <!-- Botón de acción para añadir canciones -->
       <div class="playlist-section__actions">
         <a
           :href="spotifyUrl"
@@ -37,14 +35,15 @@
 <script setup>
 import { ref } from 'vue'
 
-// Reemplaza esto con el enlace real a tu lista colaborativa de Spotify
 const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P')
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/abstracts' as *;
+
 .playlist-section {
   padding: 5rem 1.5rem;
-  background-color: #ffffff; // Fondo blanco limpio para alternar secciones
+  background-color: $color-background;
   display: flex;
   justify-content: center;
 
@@ -54,31 +53,18 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
     text-align: center;
   }
 
-  &__icon-header {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
   &__title {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 1.5rem;
+    color: $color-primary;
     margin-bottom: 1.5rem;
-    font-family: serif;
+    font-family: $font-title;
   }
 
   &__description {
     font-size: 1.1rem;
-    color: #666;
+    color: $color-primary;
     line-height: 1.6;
     margin-bottom: 2.5rem;
-  }
-
-  &__widget {
-    margin-bottom: 2.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #282828; // Evita parpadeos blancos mientras carga el iframe
   }
 
   &__button {
@@ -86,20 +72,15 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2.5rem;
-    background-color: #1db954; // Color corporativo oficial de Spotify
-    color: white;
+    background-color: $color-primary;
+    color: $color-light;
     text-decoration: none;
     border-radius: 30px;
-    font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(29, 185, 84, 0.25);
-
-    &:hover {
-      background-color: #1ed760;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(29, 185, 84, 0.35);
-    }
   }
 
   &__spotify-icon {

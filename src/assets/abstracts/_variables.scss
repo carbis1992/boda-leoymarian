@@ -1,13 +1,15 @@
-// Colores de la Boda (Ejemplo: Paleta Boho/Elegante)
-$color-primary: #859f84; // Verde eucalipto
-$color-secondary: #d4af37; // Dorado
-$color-dark: #2c3e50; // Gris oscuro para textos
-$color-light: #fdfbf7; // Blanco roto para fondos
+// Colores de la Boda
+$color-primary: #674505;
+$color-secondary: #d4af37;
+$color-dark: #2c3e50;
+$color-light: #f3f0ea;
 $color-white: #ffffff;
+$color-background: #f8f7f4;
 
 // Tipografías
-$font-title: 'Playfair Display', serif;
-$font-body: 'Montserrat', sans-serif;
+$font-title: 'New Icon Serif', 'Times New Roman', serif;
+$font-body: 'New Icon Serif', 'Times New Roman', serif;
+$font-script: 'New Icon Script', 'Brush Script MT', cursive;
 
 // Breakpoints para Responsive (Enfoque Móvil Primero)
 $breakpoint-tablet: 768px;

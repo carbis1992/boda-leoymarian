@@ -2,8 +2,8 @@
 
 .btn-primary {
   display: inline-block;
-  width: 100%; // Ocupa todo el ancho en móvil para fácil clic
-  max-width: 320px; // Evita que se deforme en pantallas grandes
+  width: 100%;
+  max-width: 320px;
   padding: 1rem 2rem;
   background-color: $color-primary;
   color: $color-white;
@@ -18,13 +18,10 @@
   cursor: pointer;
 
   &:active {
-    transform: scale(0.98); // Feedback visual al tocar en móvil
+    transform: scale(0.98);
   }
 
   @include tablet {
-    width: auto; // En escritorio vuelve a su tamaño normal
-    &:hover {
-      background-color: darken($color-primary, 10%);
-    }
+    width: auto;
   }
 }
