@@ -110,7 +110,7 @@ onUnmounted(() => {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-
+  padding-bottom: 2rem;
   &::before {
     content: '';
     position: absolute;
@@ -150,7 +150,7 @@ onUnmounted(() => {
 
   &__scroll-btn {
     position: absolute;
-    bottom: 0.5rem;
+
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
