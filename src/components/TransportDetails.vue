@@ -34,8 +34,8 @@
   }
 
   &__title {
-    font-size: 23px;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 300;
     margin-bottom: 2rem;
     color: $color-primary;
     text-transform: uppercase;

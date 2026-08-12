@@ -12,7 +12,7 @@
               Google Calendar
             </button>
             <button
-              @click="downloadICS"
+              @click="addToAppleOrOtherCalendar"
               class="details__btn details__calendar-menu__btn btn--secondary"
             >
               Apple / Outlook
