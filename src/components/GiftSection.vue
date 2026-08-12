@@ -149,10 +149,15 @@ const copyToClipboard = async (text, type) => {
   }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
     color: $color-primary;
-    margin-bottom: 1.5rem;
-    font-family: $font-title;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @include tablet {
+      font-size: 3rem;
+    }
   }
 
   &__description {

@@ -1,7 +1,7 @@
 <template>
   <section class="playlist-section">
     <div class="playlist-section__container">
-      <h2 class="playlist-section__title">¡Ayúdanos con la Música!</h2>
+      <h2 class="playlist-section__title">Musica</h2>
 
       <p class="playlist-section__description">
         Queremos que la fiesta sea inolvidable y que no dejes de bailar. Hemos creado una lista
@@ -54,10 +54,15 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
   }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
     color: $color-primary;
-    margin-bottom: 1.5rem;
-    font-family: $font-title;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @include tablet {
+      font-size: 3rem;
+    }
   }
 
   &__description {
@@ -71,7 +76,7 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 1rem 2.5rem;
+    padding: 1rem;
     background-color: $color-primary;
     color: $color-light;
     text-decoration: none;

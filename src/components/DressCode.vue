@@ -2,11 +2,10 @@
   <section class="dress-code">
     <div class="dress-code__container">
       <h3 class="dress-code__title">Dress code</h3>
-      <p class="dress-code__subtitle">Formal - Elegante</p>
 
       <div class="dress-code__rules">
         <div class="dress-code__card dress-code__card--do">
-          <h3>Titulo?</h3>
+          <h3>Formal - Elegante</h3>
           <ul>
             <li>Trajes oscuros o de etiqueta.</li>
             <li>Vestidos largos o de cóctel.</li>
@@ -43,9 +42,14 @@
 
   &__title {
     font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
     color: $color-primary;
-    margin-bottom: 0.5rem;
-    font-family: $font-title;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @include tablet {
+      font-size: 3rem;
+    }
   }
 
   &__subtitle {
@@ -77,13 +81,6 @@
       transform: translateY(-5px);
     }
 
-    h3 {
-      font-size: 1.4rem;
-
-      margin-bottom: 1.5rem;
-      font-family: $font-title;
-    }
-
     ul {
       list-style: none;
       padding: 0;
@@ -92,7 +89,7 @@
 
     li {
       font-size: 1rem;
-      color: #555;
+      color: $color-primary;
       margin-bottom: 0.8rem;
       position: relative;
       padding-left: 1.5rem;
@@ -102,7 +99,7 @@
         content: '•';
         position: absolute;
         left: 0;
-        color: #8fa89b;
+        color: $color-primary;
         font-size: 1.2rem;
       }
     }

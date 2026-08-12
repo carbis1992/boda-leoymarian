@@ -2,50 +2,63 @@
   <section id="event-details" class="details">
     <div class="details__container">
       <h2 class="details__title">CEREMONIA</h2>
-      <h4>Agenda la fecha</h4>
-      <p class="details__card-title">06 de Febrero 2027 19:00hs</p>
-      <div>
-        <!-- <button>Añadir a Google Calendar</button> -->
-        <button @click="openCalendarEvent" class="details__btn">Añadir a Calendar</button>
-      </div>
+      <div class="details__wrapper">
+        <div class="details__card">
+          <h3>Agenda la fecha</h3>
+          <p class="details__card-title" type="date">Sábado, 6 de febrero de 2027, 19:00 hs</p>
 
-      <h3>Lugar</h3>
-      <p class="details__place-name">Campos de Ibarlucea</p>
-      <div class="details__address_copy">
-        <p class="details__address_copy__address">25 de Mayo 5306 34s, Ibarlucea, Santa Fe</p>
-        <button @click="copyAddress(addressCeremonia, 'ceremonia')" class="details__copy-btn">
-          <svg
-            v-if="!copiedStatus.ceremonia"
-            xmlns="http://w3.org"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="details__svg-icon"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.18a2 2 0 0 1 3.64 0H17a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"
-            />
-          </svg>
+          <div class="details__calendar-menu">
+            <button @click="openGoogleCalendar" class="details__btn details__calendar-menu__btn">
+              Google Calendar
+            </button>
+            <button
+              @click="downloadICS"
+              class="details__btn details__calendar-menu__btn btn--secondary"
+            >
+              Apple / Outlook
+            </button>
+          </div>
+        </div>
+        <div class="details__card">
+          <h3>Lugar</h3>
+          <p class="details__card-title">Campos de Ibarlucea</p>
+          <div class="details__address_copy">
+            <p class="details__address_copy__address">25 de Mayo 5306 34s, Ibarlucea, Santa Fe</p>
+            <button @click="copyAddress(addressCeremonia, 'ceremonia')" class="details__copy-btn">
+              <svg
+                v-if="!copiedStatus.ceremonia"
+                xmlns="http://w3.org"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="details__svg-icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.18a2 2 0 0 1 3.64 0H17a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"
+                />
+              </svg>
 
-          <svg
-            v-else
-            xmlns="http://w3.org"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2.5"
-            stroke="currentColor"
-            class="details__svg-icon details__svg-icon--check"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-          </svg>
-        </button>
+              <svg
+                v-else
+                xmlns="http://w3.org"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="details__svg-icon details__svg-icon--check"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </button>
+          </div>
+          <a :href="mapsUrl" target="_blank" rel="noopener noreferrer" class="details__btn">
+            ¿Cómo llegar?
+          </a>
+        </div>
       </div>
-      <a :href="mapsUrl" target="_blank" rel="noopener noreferrer" class="details__btn">
-        ¿Cómo llegar?
-      </a>
     </div>
   </section>
 </template>
@@ -74,86 +87,74 @@ const copyAddress = async (text, key) => {
     console.error('Error al copiar la dirección: ', err)
   }
 }
+const showCalendarMenu = ref(false)
 
-const eventTitle = 'Ceremonia de boda'
-const eventDescription = 'Ceremonia en Campos de Ibarlucea'
-const eventLocation = 'Campos de Ibarlucea, 25 de Mayo 5306 34s, Ibarlucea, Santa Fe, Argentina'
-const eventStart = new Date('2027-02-06T19:00:00-03:00')
-const eventEnd = new Date('2027-02-07T04:00:00-03:00')
-const timezoneId = 'America/Argentina/Buenos_Aires'
-
-const pad = (value) => String(value).padStart(2, '0')
-
-const formatDateForICSTimezone = (date) => {
-  return (
-    date.getFullYear().toString() +
-    pad(date.getMonth() + 1) +
-    pad(date.getDate()) +
-    'T' +
-    pad(date.getHours()) +
-    pad(date.getMinutes()) +
-    pad(date.getSeconds())
-  )
+const eventData = {
+  title: 'Ceremonia',
+  description: 'Ceremonia - ¡Los esperamos!',
+  location: '25 de Mayo 5306, Ibarlucea, Santa Fe',
+  start: '2027-02-06T19:00:00',
+  end: '2027-02-06T22:00:00',
 }
 
-const formatDateForGoogle = (date) => {
-  return formatDateForICSTimezone(date)
+function toUTCString(dateStr) {
+  const date = new Date(dateStr)
+  return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'
 }
 
-const createICSContent = () => {
-  const dtStart = formatDateForICSTimezone(eventStart)
-  const dtEnd = formatDateForICSTimezone(eventEnd)
+function buildICS() {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//boda-lym//Event//ES',
-    'CALSCALE:GREGORIAN',
+    'PRODID:-//MiEvento//ES',
     'BEGIN:VEVENT',
-    `UID:${crypto.randomUUID()}`,
-    `SUMMARY:${eventTitle}`,
-    `DESCRIPTION:${eventDescription}`,
-    `LOCATION:${eventLocation}`,
-    `DTSTART;TZID=${timezoneId}:${dtStart}`,
-    `DTEND;TZID=${timezoneId}:${dtEnd}`,
-    'STATUS:CONFIRMED',
+    `UID:${Date.now()}@mievento.com`,
+    `DTSTAMP:${toUTCString(new Date().toISOString())}`,
+    `DTSTART:${toUTCString(eventData.start)}`,
+    `DTEND:${toUTCString(eventData.end)}`,
+    `SUMMARY:${eventData.title}`,
+    `DESCRIPTION:${eventData.description}`,
+    `LOCATION:${eventData.location}`,
     'END:VEVENT',
     'END:VCALENDAR',
   ].join('\r\n')
 }
 
-const getGoogleCalendarUrl = () => {
-  const params = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: eventTitle,
-    details: eventDescription,
-    location: eventLocation,
-    dates: `${formatDateForGoogle(eventStart)}/${formatDateForGoogle(eventEnd)}`,
-    ctz: timezoneId,
-  })
-  return `https://calendar.google.com/calendar/render?${params.toString()}`
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
 }
 
-const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
+function openGoogleCalendar() {
+  const dates = `${toUTCString(eventData.start)}/${toUTCString(eventData.end)}`
+  const url = new URL('https://calendar.google.com/calendar/render')
+  url.searchParams.set('action', 'TEMPLATE')
+  url.searchParams.set('text', eventData.title)
+  url.searchParams.set('dates', dates)
+  url.searchParams.set('details', eventData.description)
+  url.searchParams.set('location', eventData.location)
 
-const openIcsCalendar = () => {
-  const icsBlob = new Blob([createICSContent()], { type: 'text/calendar;charset=utf-8' })
-  const url = URL.createObjectURL(icsBlob)
-  const link = document.createElement('a')
-  link.href = url
-  link.target = '_blank'
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-  setTimeout(() => URL.revokeObjectURL(url), 1000)
+  window.open(url.toString(), '_blank')
+  showCalendarMenu.value = false
 }
 
-const openCalendarEvent = () => {
+function addToAppleOrOtherCalendar() {
+  const icsContent = buildICS()
+
   if (isIOS()) {
-    openIcsCalendar()
-    return
+    // En iOS: navegar directo a la data URI abre la vista previa nativa
+    // en vez de descargar el archivo
+    const dataUri = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent)
+    window.location.href = dataUri
+  } else {
+    // En desktop/Android: sí forzamos la descarga del .ics
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' })
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.download = 'ceremonia.ics'
+    link.click()
+    URL.revokeObjectURL(link.href)
   }
-
-  window.open(getGoogleCalendarUrl(), '_blank', 'noopener')
+  showCalendarMenu.value = false
 }
 </script>
 
@@ -170,18 +171,33 @@ const openCalendarEvent = () => {
     max-width: 600px;
     width: 100%;
     padding: 8rem 1.2rem;
-    min-height: 50vh;
+    min-height: 100vh;
   }
 
   &__title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 300;
     margin-bottom: 2rem;
     color: $color-primary;
-
+    text-transform: uppercase;
+    letter-spacing: 2px;
     @include tablet {
       font-size: 3rem;
     }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 4rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   &__subtitle {
@@ -206,6 +222,7 @@ const openCalendarEvent = () => {
     align-items: center;
     column-gap: 0.3rem;
     min-width: max-content;
+    margin-top: 0.5rem;
     &__address {
       font-size: 0.9rem;
     }
@@ -220,6 +237,7 @@ const openCalendarEvent = () => {
 
   &__btn {
     display: inline-block;
+    align-self: center;
     width: 100%;
     max-width: 200px;
     padding: 0.8rem 1.5rem;
@@ -241,6 +259,20 @@ const openCalendarEvent = () => {
 
     &:active {
       transform: translateY(0);
+    }
+  }
+
+  &__calendar-menu {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    &__btn {
+      width: 100%;
+      max-width: 200px;
+      padding: 0.8rem;
+      font-size: 0.8rem;
+      margin: 0;
+      border: none;
     }
   }
 }
