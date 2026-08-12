@@ -2,8 +2,14 @@
   <section id="event-details" class="details">
     <div class="details__container">
       <h2 class="details__title">CEREMONIA</h2>
-
+      <h4>Agenda la fecha</h4>
       <p class="details__card-title">06 de Febrero 2027 19:00hs</p>
+      <div>
+        <!-- <button>Añadir a Google Calendar</button> -->
+        <button @click="openCalendarEvent" class="details__btn">Añadir a Calendar</button>
+      </div>
+
+      <h3>Lugar</h3>
       <p class="details__place-name">Campos de Ibarlucea</p>
       <div class="details__address_copy">
         <p class="details__address_copy__address">25 de Mayo 5306 34s, Ibarlucea, Santa Fe</p>
@@ -67,6 +73,87 @@ const copyAddress = async (text, key) => {
   } catch (err) {
     console.error('Error al copiar la dirección: ', err)
   }
+}
+
+const eventTitle = 'Ceremonia de boda'
+const eventDescription = 'Ceremonia en Campos de Ibarlucea'
+const eventLocation = 'Campos de Ibarlucea, 25 de Mayo 5306 34s, Ibarlucea, Santa Fe, Argentina'
+const eventStart = new Date('2027-02-06T19:00:00-03:00')
+const eventEnd = new Date('2027-02-07T04:00:00-03:00')
+const timezoneId = 'America/Argentina/Buenos_Aires'
+
+const pad = (value) => String(value).padStart(2, '0')
+
+const formatDateForICSTimezone = (date) => {
+  return (
+    date.getFullYear().toString() +
+    pad(date.getMonth() + 1) +
+    pad(date.getDate()) +
+    'T' +
+    pad(date.getHours()) +
+    pad(date.getMinutes()) +
+    pad(date.getSeconds())
+  )
+}
+
+const formatDateForGoogle = (date) => {
+  return formatDateForICSTimezone(date)
+}
+
+const createICSContent = () => {
+  const dtStart = formatDateForICSTimezone(eventStart)
+  const dtEnd = formatDateForICSTimezone(eventEnd)
+  return [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//boda-lym//Event//ES',
+    'CALSCALE:GREGORIAN',
+    'BEGIN:VEVENT',
+    `UID:${crypto.randomUUID()}`,
+    `SUMMARY:${eventTitle}`,
+    `DESCRIPTION:${eventDescription}`,
+    `LOCATION:${eventLocation}`,
+    `DTSTART;TZID=${timezoneId}:${dtStart}`,
+    `DTEND;TZID=${timezoneId}:${dtEnd}`,
+    'STATUS:CONFIRMED',
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\r\n')
+}
+
+const getGoogleCalendarUrl = () => {
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: eventTitle,
+    details: eventDescription,
+    location: eventLocation,
+    dates: `${formatDateForGoogle(eventStart)}/${formatDateForGoogle(eventEnd)}`,
+    ctz: timezoneId,
+  })
+  return `https://calendar.google.com/calendar/render?${params.toString()}`
+}
+
+const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
+
+const openIcsCalendar = () => {
+  const icsBlob = new Blob([createICSContent()], { type: 'text/calendar;charset=utf-8' })
+  const url = URL.createObjectURL(icsBlob)
+  const link = document.createElement('a')
+  link.href = url
+  link.target = '_blank'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
+const openCalendarEvent = () => {
+  if (isIOS()) {
+    openIcsCalendar()
+    return
+  }
+
+  window.open(getGoogleCalendarUrl(), '_blank', 'noopener')
 }
 </script>
 
