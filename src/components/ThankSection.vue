@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem 2rem;
-  background-color: $color-primary;
+  background-color: rgba($color-primary, 0.5);
   color: $color-light;
   font-size: 0.9rem;
   font-weight: 500;

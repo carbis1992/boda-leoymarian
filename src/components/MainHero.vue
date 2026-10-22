@@ -1,7 +1,9 @@
 <template>
   <section class="hero">
     <div class="hero__content">
-      <h1 class="hero__title">LM</h1>
+      <h1 class="hero__title">
+        <img src="../assets/img/logo-ml.svg" alt="logo-iniciales" />
+      </h1>
       <p class="hero__subtitle">¡Nos casamos!</p>
 
       <div class="hero__countdown countdown">
@@ -133,9 +135,13 @@ onUnmounted(() => {
     font-size: 3rem;
     font-weight: 300;
     margin-bottom: 0.5rem;
-    color: $color-primary;
+    color: $color-countdown;
     @include tablet {
       font-size: 4.5rem;
+    }
+    img {
+      max-width: 6rem;
+      display: inline;
     }
   }
 
@@ -145,7 +151,7 @@ onUnmounted(() => {
     letter-spacing: 0.2em;
     background-color: color-mix(in srgb, var(--color-dark), white 10%);
     margin-bottom: 2rem;
-    color: $color-primary;
+    color: $color-countdown;
   }
 
   &__scroll-btn {
@@ -165,14 +171,14 @@ onUnmounted(() => {
     pointer-events: auto;
 
     &:hover {
-      color: $color-primary;
+      color: $color-countdown;
     }
   }
 
   &__arrow-icon {
     width: 32px;
     height: 32px;
-    color: $color-primary;
+    color: $color-countdown;
   }
 }
 
@@ -196,7 +202,7 @@ onUnmounted(() => {
   margin-bottom: 2rem;
 
   &__item {
-    background-color: $color-primary;
+    background-color: $color-countdown;
     color: $color-light;
     padding: 0.5rem;
     border-radius: 8px;

@@ -163,21 +163,22 @@ function addToAppleOrOtherCalendar() {
   @include flex-center;
   width: 100%;
   text-align: center;
-  background-color: $color-light;
+  background-image: url(/src/assets/img/back.png);
+  background-size: cover;
   position: relative;
 
   &__container {
     text-align: center;
     max-width: 600px;
     width: 100%;
-    padding: 8rem 1.2rem;
+    padding: 4rem 1.4rem;
     min-height: 100vh;
   }
 
   &__title {
     font-size: 2rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: $color-primary;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -191,7 +192,10 @@ function addToAppleOrOtherCalendar() {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    row-gap: 4rem;
+    row-gap: 2rem;
+    // background: rgba($color-primary, 0.5);
+    padding: 2rem;
+    border-radius: 50px;
   }
 
   &__card {
@@ -241,7 +245,8 @@ function addToAppleOrOtherCalendar() {
     width: 100%;
     max-width: 200px;
     padding: 0.8rem 1.5rem;
-    background-color: $color-primary;
+    background-color: rgba($color-primary, 0.6);
+
     color: $color-light;
     margin-top: 2rem;
     text-decoration: none;

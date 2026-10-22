@@ -1,7 +1,9 @@
 <template>
   <section class="gift-section">
     <div class="gift-section__container">
-      <h3 class="gift-section__title">REGALO</h3>
+      <h3 class="gift-section__title">
+        <img src="../assets/img/icono-regalo.png" alt="" />
+      </h3>
 
       <p class="gift-section__description">
         Tu presencia en nuestra boda es el mejor regalo que podríamos pedir. Sin embargo, si deseas
@@ -132,8 +134,11 @@ const copyToClipboard = async (text, type) => {
 @use '@/assets/abstracts' as *;
 
 .gift-section {
-  padding: 5rem 1.5rem;
-  background-color: $color-background;
+  padding: 2rem 1.5rem;
+  // background-color: $color-background;
+  background-image: url(/src/assets/img/fiesta.png);
+  background-size: cover;
+  height: 100vh;
   display: flex;
   justify-content: center;
   color: $color-primary;
@@ -151,12 +156,17 @@ const copyToClipboard = async (text, type) => {
   &__title {
     font-size: 2rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: $color-primary;
     text-transform: uppercase;
     letter-spacing: 2px;
+    justify-items: center;
     @include tablet {
       font-size: 3rem;
+    }
+
+    img {
+      max-width: 8rem;
     }
   }
 
@@ -168,7 +178,7 @@ const copyToClipboard = async (text, type) => {
   }
 
   &__card {
-    background: $color-light;
+    background: rgba($color-light, 0.6);
     color: $color-primary;
 
     padding: 2rem;
@@ -176,6 +186,10 @@ const copyToClipboard = async (text, type) => {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     border: 1px solid #eae1d4;
     text-align: left;
+
+    img {
+      width: 8rem;
+    }
   }
 
   &__info-row {
@@ -185,7 +199,7 @@ const copyToClipboard = async (text, type) => {
     flex-direction: column;
     gap: 0.5rem;
     padding: 1.2rem 0;
-    border-bottom: 1px dashed #eae1d4;
+    // border-bottom: 1px dashed #eae1d4;
     &:last-child {
       border-bottom: none;
       padding-bottom: 0;

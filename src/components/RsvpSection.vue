@@ -1,7 +1,8 @@
 <template>
   <section class="rsvp-section">
     <div class="rsvp-section__container">
-      <h2 class="rsvp-section__title">Confirmar Asistencia</h2>
+      <!-- <h2 class="rsvp-section__title">Confirmar Asistencia</h2> -->
+      <img src="../assets/img/calendario.png" alt="" />
       <p class="rsvp-section__description">
         Por favor, ayúdanos a organizar el gran día confirmando tu asistencia. Es muy importante que
         nos indiques si tienes alguna alergia o restricción alimentaria.
@@ -28,14 +29,21 @@
 
 .rsvp-section {
   padding: 4rem 1.5rem;
-  background-color: $color-background;
+  // background-color: $color-background;
   display: flex;
   justify-content: center;
-
+  background-image: url(/src/assets/img/noviosfondo.png);
+  background-size: cover;
+  height: 100vh;
   &__container {
     max-width: 800px;
     width: 100%;
     text-align: center;
+
+    img {
+      width: 7rem;
+      justify-self: center;
+    }
   }
 
   &__title {

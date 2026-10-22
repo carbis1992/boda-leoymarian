@@ -5,7 +5,7 @@
     <TransportDetails />
     <DressCode />
     <GiftSection />
-    <PlaylistSection />
+    <!-- <PlaylistSection /> -->
     <RsvpSection />
     <ThankSection />
   </main>
@@ -21,3 +21,5 @@ import PlaylistSection from '@/components/PlaylistSection.vue'
 import ThankSection from '@/components/ThankSection.vue'
 import TransportDetails from '@/components/TransportDetails.vue'
 </script>
+
+<style></style>

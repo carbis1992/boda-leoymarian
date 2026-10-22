@@ -43,7 +43,10 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
 
 .playlist-section {
   padding: 5rem 1.5rem;
-  background-color: $color-background;
+  // background-color: $color-background;
+  background-image: url(/src/assets/img/back.png);
+  background-size: cover;
+  height: 100vh;
   display: flex;
   justify-content: center;
 
