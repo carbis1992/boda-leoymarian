@@ -8,9 +8,9 @@
 }
 
 body {
-  background-color: $color-light;
+  height: 100vh;
   color: $color-dark;
-  overflow-x: hidden; // Evita el molesto scroll horizontal en móviles
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
