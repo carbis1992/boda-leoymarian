@@ -90,7 +90,7 @@ const eventData = {
       position: absolute;
       justify-self: center;
       margin-top: 1.5rem;
-      text-align: center;
+      text-align: center !important;
       letter-spacing: 2px;
       span {
         font-family: $font-script;
