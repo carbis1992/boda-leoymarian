@@ -92,6 +92,9 @@ const eventData = {
       margin-top: 1.5rem;
       text-align: center !important;
       letter-spacing: 2px;
+      width: 100%;
+      margin: auto;
+      margin-top: 1.5rem;
       span {
         font-family: $font-script;
         font-size: 30px;
