@@ -2,7 +2,18 @@
   <section class="gift-section">
     <div class="gift-card">
       <!-- <img src="/src/assets/img/zocalo-regalo.svg" alt="regalo" /> -->
-      <!-- <p>texto</p> -->
+      <div class="gift-card__content">
+        <p class="title">
+          TU PRESENCIA ES <br />
+          NUESTRO <span class="mejor">mejor</span> <br />
+          REGALO
+        </p>
+
+        <p class="disclaimer">
+          SIN EMBARGO, SI DESEAS TENER UN DETALLE CON NOSOTROS & AYUDARNOS CON NUESTRA LUNA DE MIEL,
+          PODÉS HACERLO A TRAVÉS DE LAS SIGUIENTES CUENTAS BANCARIAS:
+        </p>
+      </div>
       <div class="popup-wrapper">
         <button class="close-popup" @click="clearPopup"><span></span></button>
         <img v-if="showModalPesos" src="/src/assets/img/popup-pesos.svg" alt="regalo" />
@@ -77,12 +88,50 @@ const clearPopup = () => {
   /* width: 100%; */
   height: 300px;
   background-size: cover;
+
+  &__content {
+    width: 80%;
+    margin: auto;
+    padding-top: 24%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    height: stretch;
+    transform: rotate(-6deg);
+    gap: 30px;
+    text-align: center;
+    align-items: flex-start;
+
+    .disclaimer {
+      font-size: 12px;
+      font-family: $font-body;
+      letter-spacing: 1px;
+    }
+
+    .mejor {
+      font-size: 30px;
+      font-family: $font-script;
+      font-weight: 100;
+    }
+
+    .title {
+      line-height: 1;
+      font-size: 16px;
+      margin-left: 1.5rem;
+    }
+  }
+  .popup-wrapper {
+    position: absolute;
+    top: -53%;
+    z-index: 13;
+    width: 100%;
+  }
   .close-popup {
     position: absolute;
     right: 25px;
     width: 65px;
     height: 65px;
-    top: 50px;
+    top: 10px;
     border: none;
     background: none;
     span {
