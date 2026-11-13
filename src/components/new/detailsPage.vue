@@ -68,11 +68,9 @@ const eventData = {
     .divider {
       display: flex;
       justify-content: center;
-      height: 180px;
       span {
         display: block;
         width: 0.5px;
-        height: 180px;
         background-color: $color-primary;
       }
     }
