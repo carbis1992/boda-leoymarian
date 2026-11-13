@@ -3,9 +3,8 @@
     <div class="details-page__content">
       <div class="divider"><span></span></div>
       <div class="wrapper-details">
-   
-          <img class="details" src="/src/assets/img/lugar.svg" alt="save-our-date" />
-     
+        <img class="details" src="/src/assets/img/lugar.svg" alt="save-our-date" />
+
         <img src="/src/assets/img/back1.png" alt="imagen-salon" />
       </div>
 
@@ -60,7 +59,8 @@ const eventData = {
 
 .details-page {
   height: 100vh;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
     url(/src/assets/img/fondo-papel.jpeg);
   background-repeat: round;
 
@@ -72,7 +72,7 @@ const eventData = {
       span {
         display: block;
         width: 0.5px;
-        height: 90px;
+        height: 180px;
         background-color: $color-primary;
       }
     }
@@ -87,12 +87,12 @@ const eventData = {
       padding: 4px;
     }
     .details {
-          padding: 0;
-    border: none;
-    width: 65%;
-    justify-self: center;
-        position: absolute;
-    margin-top: 5%;
+      padding: 0;
+      border: none;
+      width: 65%;
+      justify-self: center;
+      position: absolute;
+      margin-top: 5%;
     }
   }
   &__directions {

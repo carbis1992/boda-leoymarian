@@ -39,10 +39,9 @@
         </p>
 
         <p class="disclaimer">
-          Op. 01: (341) 5602 984 <CopyBtn copyText="+5493415602984"/> <br />
-          Op. 02: (341) 6892 897 <CopyBtn copyText="+5493416892897"/> <br />
-          Op. 03: (341) 6400 185 <CopyBtn copyText="+5493416400185"/> <br />
-
+          Op. 01: (341) 5602 984 <CopyBtn copyText="+5493415602984" /> <br />
+          Op. 02: (341) 6892 897 <CopyBtn copyText="+5493416892897" /> <br />
+          Op. 03: (341) 6400 185 <CopyBtn copyText="+5493416400185" /> <br />
         </p>
         <p class="footer" style="font-size: 12px">
           - les acercamos opciones, <br />
@@ -50,7 +49,7 @@
         </p>
       </div>
     </div>
-    <div class="divider"><span style="height: 125px"></span></div>
+    <div class="divider"><span style="height: 190px"></span></div>
   </section>
 </template>
 <script setup>

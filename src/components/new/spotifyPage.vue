@@ -7,12 +7,6 @@
       </div>
       <img src="/src/assets/img/spotify.svg" alt="spotify" />
     </div>
-    <div>
-            <img src="/src/assets/img/zocalo-regalo.svg" alt="regalo" />
-        <img src="/src/assets/img/tarjeta-regalo.svg" alt="regalo" />
-
-        </div>
-    <!-- <div class="divider"><span style="height: 125px"></span></div> -->
   </section>
 </template>
 <script setup>
@@ -24,7 +18,7 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
 @use '@/assets/abstracts' as *;
 
 .spotify-wrapper {
-//   height: 100vh;
+  //   height: 100vh;
   position: relative;
   isolation: isolate;
 
@@ -33,7 +27,10 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: url(/src/assets/img/fondo-papel.jpeg) center / cover no-repeat;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+      url(/src/assets/img/fondo-papel.jpeg);
+    background-repeat: round;
   }
 
   .divider {
@@ -42,7 +39,7 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
     height: 30px;
     span {
       display: block;
-      width: 1.5px;
+      width: 0.5px;
       height: 90px;
       background-color: $color-primary;
     }
