@@ -1,9 +1,7 @@
 <template>
   <section class="welcome-page">
-    <div class="welcome-page__title">
+    <div class="data">
       <img src="/src/assets/img/save-our-date.svg" alt="save-our-date" />
-    </div>
-    <div class="welcome-page__subtitle">
       <img src="/src/assets/img/fecha.svg" alt="save-our-date" />
     </div>
   </section>
@@ -34,21 +32,14 @@
     z-index: 0;
   }
 
-  &__title {
-    position: absolute;
-    top: 54%;
-    margin: auto;
+  .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    row-gap: 30vh;
     img {
       width: 100%;
-    }
-  }
-  &__subtitle {
-    position: absolute;
-    justify-items: center;
-    bottom: 7%;
-    margin: auto;
-    img {
-      width: 75%;
+      z-index: 1;
     }
   }
 }
