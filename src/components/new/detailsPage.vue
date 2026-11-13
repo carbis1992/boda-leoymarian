@@ -3,11 +3,9 @@
     <div class="details-page__content">
       <div class="divider"><span></span></div>
       <div class="wrapper-details">
-        <p class="details">
-          CAMPOS <span>de</span> IBARLUCEA <br />
-          25 de MAYO 5306 34s <br />
-          a las 19hs
-        </p>
+   
+          <img class="details" src="/src/assets/img/lugar.svg" alt="save-our-date" />
+     
         <img src="/src/assets/img/back1.png" alt="imagen-salon" />
       </div>
 
@@ -70,7 +68,7 @@ const eventData = {
     .divider {
       display: flex;
       justify-content: center;
-      height: 90px;
+      height: 180px;
       span {
         display: block;
         width: 0.5px;
@@ -89,18 +87,12 @@ const eventData = {
       padding: 4px;
     }
     .details {
-      position: absolute;
-      justify-self: center;
-      margin-top: 1.5rem;
-      text-align: center !important;
-      letter-spacing: 2px;
-      width: 100%;
-      margin: auto;
-      margin-top: 1.5rem;
-      span {
-        font-family: $font-script;
-        font-size: 30px;
-      }
+          padding: 0;
+    border: none;
+    width: 65%;
+    justify-self: center;
+        position: absolute;
+    margin-top: 5%;
     }
   }
   &__directions {

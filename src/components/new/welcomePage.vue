@@ -1,14 +1,10 @@
 <template>
   <section class="welcome-page">
     <div class="welcome-page__title">
-      <p>SAVE <span class="title-span">our</span> DATE</p>
+      <img src="/src/assets/img/save-our-date.svg" alt="save-our-date" />
     </div>
     <div class="welcome-page__subtitle">
-      <p>
-        Sábado 06 <br />
-        <span class="subtitle-span">de</span> Febrero, 2027
-      </p>
-      <p>19:00 hrs</p>
+      <img src="/src/assets/img/fecha.svg" alt="save-our-date" />
     </div>
   </section>
 </template>
@@ -40,48 +36,17 @@
 
   &__title {
     position: absolute;
-    top: 50%;
-    p {
-      font-size: 2rem;
-      color: $color-light;
-      font-family: $font-title;
-      letter-spacing: 2px;
-      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
-    }
-    .title-span {
-      position: relative;
-      display: inline-block;
-      font-family: $font-script;
-      font-size: clamp(5.5rem, 12vw, 7rem);
-      font-style: italic;
-      line-height: 0.8;
-      text-decoration: none;
-
-      &::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0.08em;
-        left: 0;
-        height: 2px;
-        background-color: $color-primary;
-      }
+    top: 54%;
+    img {
+      width: 100%;
     }
   }
   &__subtitle {
     position: absolute;
-    bottom: 5%;
-    p {
-      font-size: 1.3rem;
-      color: $color-light;
-      font-family: $font-body;
-      letter-spacing: 1px;
-      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
-    }
-    .subtitle-span {
-      font-family: $font-script;
-      font-size: 2rem;
-      font-style: italic;
+    justify-items: center;
+    bottom: 7%;
+    img {
+      width: 75%;
     }
   }
 }

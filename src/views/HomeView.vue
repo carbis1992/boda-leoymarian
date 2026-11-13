@@ -3,12 +3,8 @@
     <WelcomePage />
     <DetailsPage />
     <CardsDetails />
-    <!-- <EventDetails />
-    <TransportDetails />
-    <DressCode />
-    <GiftSection />
-    <RsvpSection />
-    <ThankSection /> -->
+    <SpotifyPage />
+    <!-- <GiftPage /> -->
   </main>
 </template>
 
@@ -16,13 +12,8 @@
 import WelcomePage from '@/components/new/WelcomePage.vue'
 import CardsDetails from '@/components/new/cardsDetails.vue'
 import DetailsPage from '@/components/new/detailsPage.vue'
-// import EventDetails from '@/components/EventDetails.vue'
-// import RsvpSection from '@/components/RsvpSection.vue'
-// import DressCode from '@/components/DressCode.vue'
-// import GiftSection from '@/components/GiftSection.vue'
-// import PlaylistSection from '@/components/PlaylistSection.vue'
-// import ThankSection from '@/components/ThankSection.vue'
-// import TransportDetails from '@/components/TransportDetails.vue'
+import GiftPage from '@/components/new/giftPage.vue';
+import SpotifyPage from '@/components/new/spotifyPage.vue';
 </script>
 
 <style lang="scss">
