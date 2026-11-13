@@ -14,7 +14,7 @@
 
 <script setup>
 import WelcomePage from '@/components/new/WelcomePage.vue'
-import CardsDetails from '@/components/new/cardsDetails.vue';
+import CardsDetails from '@/components/new/cardsDetails.vue'
 import DetailsPage from '@/components/new/detailsPage.vue'
 // import EventDetails from '@/components/EventDetails.vue'
 // import RsvpSection from '@/components/RsvpSection.vue'
@@ -25,4 +25,9 @@ import DetailsPage from '@/components/new/detailsPage.vue'
 // import TransportDetails from '@/components/TransportDetails.vue'
 </script>
 
-<style></style>
+<style lang="scss">
+.wedding-landing {
+  min-width: 100%;
+  max-width: 100%;
+}
+</style>

@@ -62,7 +62,9 @@ const eventData = {
 
 .details-page {
   height: 100vh;
-  background-image: url(/src/assets/img/fondo-papel.jpeg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url(/src/assets/img/fondo-papel.jpeg);
+  background-repeat: round;
 
   &__content {
     .divider {
@@ -71,18 +73,18 @@ const eventData = {
       height: 90px;
       span {
         display: block;
-        width: 1.5px;
+        width: 0.5px;
         height: 90px;
         background-color: $color-primary;
       }
     }
     img {
-      border: 1.5px solid $color-primary;
+      border: 0.5px solid $color-primary;
       padding: 5px;
     }
     .wrapper-details {
       margin: auto;
-      border: 1px solid;
+      border: 0.5px solid;
       width: 90%;
       padding: 4px;
     }
@@ -104,14 +106,14 @@ const eventData = {
   &__directions {
     width: 90%;
     margin: auto;
-    border: 1.5px solid $color-primary;
+    border: 0.5px solid $color-primary;
     padding: 4px;
     min-height: 100px;
     margin-top: 2rem;
     &__buttons {
       display: flex;
       width: 100%;
-      border: 1px solid;
+      border: 0.5px solid;
       padding: 8px;
       justify-content: space-around;
       img {

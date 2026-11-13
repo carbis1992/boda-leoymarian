@@ -21,38 +21,39 @@
     </div>
     <div class="cards-details-wrapper__card card-2">
       <div class="cards-details-wrapper__card__content">
-        <p class="title" >
-          <span style="font-size: 35px;">dress</span>CODE:
-          <br /> <a href="#">FORMAL</a>
-          <br /> 
-          
+        <p class="title">
+          <span style="font-size: 35px">dress</span>CODE: <br />
+          <a href="#">FORMAL</a>
+          <br />
         </p>
-<p class="disclaimer"><span class="dress">IMP:</span> evitar tonos blancos & derivados (colores pastel)</p>
-        
+        <p class="disclaimer">
+          <span class="dress">IMP:</span> evitar tonos blancos & derivados (colores pastel)
+        </p>
       </div>
     </div>
     <div class="cards-details-wrapper__card card-3">
-<div class="cards-details-wrapper__card__content">
+      <div class="cards-details-wrapper__card__content">
         <p class="title">
-          TRASLADO <br /> <span>hacia</span> EL EVENTO
-          
+          TRASLADO <br />
+          <span>hacia</span> EL EVENTO
         </p>
 
         <p class="disclaimer">
-          Op. 01 -- (341) 5602 984 <CopyBtn copyText="+5493415602984"/> <br />
-          Op. 02 -- (341) 6892 897 <CopyBtn copyText="+5493416892897"/> <br />
-          Op. 03 -- (341) 6400 185 <CopyBtn copyText="+5493416400185"/> <br />
-
+          Op. 01 -- (341) 5602 984 <CopyBtn copyText="+5493415602984" /> <br />
+          Op. 02 -- (341) 6892 897 <CopyBtn copyText="+5493416892897" /> <br />
+          Op. 03 -- (341) 6400 185 <CopyBtn copyText="+5493416400185" /> <br />
         </p>
-        <p class="footer" style="    font-size: 12px;">- les acercamos opciones, <br /> en caso de que les sea de ayuda -</p>
+        <p class="footer" style="font-size: 12px">
+          - les acercamos opciones, <br />
+          en caso de que les sea de ayuda -
+        </p>
+      </div>
     </div>
-    </div>
-<div class="divider"><span style="height: 125px;"></span></div>
+    <div class="divider"><span style="height: 125px"></span></div>
   </section>
 </template>
 <script setup>
-import CopyBtn from '../copyBtn.vue';
-
+import CopyBtn from '../copyBtn.vue'
 </script>
 <style lang="scss" scoped>
 @use '@/assets/abstracts' as *;
@@ -67,7 +68,10 @@ import CopyBtn from '../copyBtn.vue';
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: url(/src/assets/img/fondo-papel.jpeg) center / cover no-repeat;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+      url(/src/assets/img/fondo-papel.jpeg);
+    background-repeat: round;
     transform: rotate(180deg);
   }
 
@@ -77,7 +81,7 @@ import CopyBtn from '../copyBtn.vue';
     height: 90px;
     span {
       display: block;
-      width: 1.5px;
+      width: 0.5px;
       height: 90px;
       background-color: $color-primary;
     }
@@ -97,8 +101,9 @@ import CopyBtn from '../copyBtn.vue';
         font-size: 30px;
       }
       .dress {
-        font-family: $font-body; font-size: 12px;
-    font-weight: 600;
+        font-family: $font-body;
+        font-size: 12px;
+        font-weight: 600;
       }
       a {
         text-decoration: underline;
