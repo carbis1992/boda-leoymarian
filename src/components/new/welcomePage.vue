@@ -6,7 +6,7 @@
         src="/src/assets/img/save-our-date.svg"
         alt="save-our-date"
       />
-      <img style="width: 65%; margin: 0 auto" src="/src/assets/img/fecha.svg" alt="save-our-date" />
+      <img style="width: 55%; margin: 0 auto" src="/src/assets/img/fecha.svg" alt="save-our-date" />
     </div>
   </section>
 </template>
@@ -40,8 +40,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    row-gap: 31vh;
+    row-gap: 29vh;
     z-index: 1;
+    margin-bottom: 1.5rem;
     img {
       width: 100%;
       z-index: 1;
