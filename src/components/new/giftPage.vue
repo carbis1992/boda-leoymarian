@@ -80,8 +80,8 @@ const clearPopup = () => {
   .close-popup {
     position: absolute;
     right: 25px;
-    width: 30px;
-    height: 30px;
+    width: 65px;
+    height: 65px;
     top: 50px;
     border: none;
     background: none;
