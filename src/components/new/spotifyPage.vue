@@ -1,6 +1,6 @@
 <template>
   <section class="spotify-wrapper">
-    <div class="divider"><span></span></div>
+    <div class="divider"><span style="height: 8vh"></span></div>
     <div class="spotify-details">
       <div class="btn-spotify">
         <a :href="spotifyUrl" target="_blank" rel="noopener noreferrer"></a>
