@@ -37,6 +37,7 @@
   &__title {
     position: absolute;
     top: 54%;
+    margin: auto;
     img {
       width: 100%;
     }
@@ -45,6 +46,7 @@
     position: absolute;
     justify-items: center;
     bottom: 7%;
+    margin: auto;
     img {
       width: 75%;
     }

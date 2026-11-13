@@ -36,7 +36,7 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
   .divider {
     display: flex;
     justify-content: center;
-    height: 30px;
+    // height: 30px;
     span {
       display: block;
       width: 0.5px;
@@ -49,6 +49,7 @@ const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P
     position: relative;
     width: 80%;
     justify-self: center;
+    margin: auto;
     background: #5c1d301f;
     border-radius: 45px;
   }

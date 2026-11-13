@@ -90,9 +90,9 @@ const eventData = {
       padding: 0;
       border: none;
       width: 65%;
-      justify-self: center;
       position: absolute;
       margin-top: 5%;
+      margin-left: 12%;
     }
   }
   &__directions {
