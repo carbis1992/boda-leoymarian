@@ -2,7 +2,7 @@
   <section class="welcome-page">
     <div class="data">
       <img src="/src/assets/img/save-our-date.svg" alt="save-our-date" />
-      <img src="/src/assets/img/fecha.svg" alt="save-our-date" />
+      <img style="width: 80%; margin: 0 auto" src="/src/assets/img/fecha.svg" alt="save-our-date" />
     </div>
   </section>
 </template>
@@ -37,6 +37,7 @@
     flex-direction: column;
     justify-content: flex-end;
     row-gap: 30vh;
+    z-index: 1;
     img {
       width: 100%;
       z-index: 1;
