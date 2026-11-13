@@ -1,7 +1,7 @@
 <template>
   <section class="details-page">
     <div class="details-page__content">
-      <div class="divider"><span></span></div>
+      <div class="divider"><span style="height: 15vh"></span></div>
       <div class="wrapper-details">
         <img class="details" src="/src/assets/img/lugar.svg" alt="save-our-date" />
 
