@@ -15,12 +15,12 @@
       </div>
       <div class="popup-wrapper">
         <button class="close-popup" @click="clearPopup"><span></span></button>
+        <p v-if="copyToast" class="copy-toast" role="status" aria-live="polite">{{ copyToast }}</p>
         <img v-if="showModalPesos" src="/src/assets/img/popup-pesos.svg" alt="regalo" />
         <img v-if="showModalDolares" src="/src/assets/img/popup-dol.svg" alt="regalo" />
         <img v-if="showModalEuros" src="/src/assets/img/popup-eur.svg" alt="regalo" />
         <button v-if="activeCopyText" class="copy-alias" @click="copyText"><span></span></button>
       </div>
-      <p v-if="copyToast" class="copy-toast" role="status" aria-live="polite">{{ copyToast }}</p>
     </div>
 
     <div class="btn-gift">
@@ -47,8 +47,8 @@ const copyToast = ref('')
 let toastTimeout = 0
 
 const activeCopyText = computed(() => {
-  if (showModalPesos.value) return 'BODALYM.'
-  if (showModalDolares.value) return 'BODALYM.USD'
+  if (showModalPesos.value) return 'bodalym.'
+  if (showModalDolares.value) return 'bodalym.usd'
   if (showModalEuros.value) return 'BE94967415853514'
   return ''
 })
@@ -192,6 +192,9 @@ const copyText = async () => {
   border-radius: 0.5rem;
   border: 0.5px solid;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  position: absolute;
+  justify-self: center;
+  top: 75%;
 }
 .btn-gift {
   display: flex;

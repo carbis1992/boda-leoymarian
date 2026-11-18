@@ -54,7 +54,6 @@
   }
   &__card {
     width: 80%;
-    height: 28%;
     margin: auto;
     border: 1px solid;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
