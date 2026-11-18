@@ -124,9 +124,9 @@ const eventData = {
     height: -webkit-fill-available;
     .details-page__content {
       .wrapper-details {
-        width: fit-content;
+        width: 25%;
         .details {
-          width: 20%;
+          width: 15%;
           margin-left: 5%;
           margin-top: 2%;
         }

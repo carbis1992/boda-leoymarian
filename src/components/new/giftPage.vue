@@ -24,14 +24,14 @@
     </div>
 
     <div class="btn-gift">
-      <button @click="showPesosModal">
+      <button @click="showPesosModal" style="cursor: pointer">
         <img src="/src/assets/img/cuenta-pesos.svg" alt="regalo" />
       </button>
-      <button @click="showDolaresModal">
+      <button @click="showDolaresModal" style="cursor: pointer">
         <img src="/src/assets/img/cuenta-dol.svg" alt="regalo" />
       </button>
 
-      <button @click="showEurosModal">
+      <button @click="showEurosModal" style="cursor: pointer">
         <img src="/src/assets/img/cuenta-eur.svg" alt="regalo" />
       </button>
     </div>
@@ -91,7 +91,7 @@ const copyText = async () => {
   window.clearTimeout(toastTimeout)
   toastTimeout = window.setTimeout(() => {
     copyToast.value = ''
-  }, 2500)
+  }, 1500)
 }
 </script>
 <style lang="scss" scoped>
@@ -184,8 +184,6 @@ const copyText = async () => {
 
 .copy-toast {
   z-index: 20;
-  position: sticky;
-  width: max-content;
   margin: auto;
   padding: 8px;
   font-size: 16px;
@@ -195,6 +193,7 @@ const copyText = async () => {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   position: absolute;
   justify-self: center;
+  align-items: center;
   top: 75%;
 }
 .btn-gift {

@@ -25,7 +25,7 @@
 @use '@/assets/abstracts' as *;
 
 .cards-details-wrapper {
-  height: 100vh;
+  height: auto;
   position: relative;
   isolation: isolate;
 
@@ -125,7 +125,7 @@
     height: auto;
   }
   .cards-details-wrapper__card {
-    width: 25%;
+    width: 20%;
   }
 }
 </style>

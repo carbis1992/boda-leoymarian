@@ -68,7 +68,7 @@ const spotifyUrl = ref(
 @include desktop {
   .spotify-wrapper {
     .spotify-details {
-      width: 30%;
+      width: 20%;
     }
   }
 }
