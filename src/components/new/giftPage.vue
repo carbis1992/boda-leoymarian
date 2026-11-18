@@ -15,7 +15,15 @@
       </div>
       <div class="popup-wrapper">
         <button class="close-popup" @click="clearPopup"><span></span></button>
-        <p v-if="copyToast" class="copy-toast" role="status" aria-live="polite">{{ copyToast }}</p>
+        <p
+          v-if="copyToast"
+          class="copy-toast"
+          role="status"
+          aria-live="polite"
+          :class="showModalEuros ? 'copy-iban' : ''"
+        >
+          {{ copyToast }}
+        </p>
         <img v-if="showModalPesos" src="/src/assets/img/popup-pesos.svg" alt="regalo" />
         <img v-if="showModalDolares" src="/src/assets/img/popup-dol.svg" alt="regalo" />
         <img v-if="showModalEuros" src="/src/assets/img/popup-eur.svg" alt="regalo" />
@@ -183,8 +191,6 @@ const copyText = async () => {
 }
 
 .copy-toast {
-  z-index: 20;
-  margin: auto;
   padding: 8px;
   font-size: 16px;
   background: rgba(236, 233, 227, 0.9);
@@ -192,9 +198,13 @@ const copyText = async () => {
   border: 0.5px solid;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   position: absolute;
-  justify-self: center;
-  align-items: center;
   top: 75%;
+  left: 25%;
+
+  width: fit-content;
+}
+.copy-iban {
+  left: 37%;
 }
 .btn-gift {
   display: flex;
