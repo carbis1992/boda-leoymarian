@@ -52,8 +52,6 @@ const spotifyUrl = ref(
     width: 80%;
     justify-self: center;
     margin: auto;
-    background: #5c1d301f;
-    border-radius: 45px;
   }
 
   .btn-spotify {
@@ -64,6 +62,13 @@ const spotifyUrl = ref(
       display: block;
       width: 62px;
       height: 58px;
+    }
+  }
+}
+@include desktop {
+  .spotify-wrapper {
+    .spotify-details {
+      width: 30%;
     }
   }
 }

@@ -181,6 +181,7 @@ const copyText = async () => {
     }
   }
 }
+
 .copy-toast {
   z-index: 20;
   position: sticky;
@@ -211,6 +212,35 @@ const copyText = async () => {
 
   img {
     width: 100%;
+  }
+}
+@include desktop {
+  .gift-section {
+    .gift-card {
+      width: 31%;
+      height: 345px;
+      justify-self: center;
+
+      .close-popup {
+        cursor: pointer;
+      }
+
+      .popup-wrapper {
+        width: 31%;
+      }
+
+      .copy-alias {
+        right: 127px;
+        width: 242px;
+        height: 247px;
+        top: 121px;
+        cursor: pointer;
+      }
+    }
+    .btn-gift {
+      width: 30%;
+      justify-self: center;
+    }
   }
 }
 </style>

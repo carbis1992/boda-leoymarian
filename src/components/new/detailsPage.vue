@@ -10,7 +10,7 @@
 
       <div class="details-page__directions">
         <div class="details-page__directions__buttons">
-          <button @click="openGoogleCalendar">
+          <button @click="openGoogleCalendar" style="cursor: pointer">
             <img src="/src/assets/img/agendar-btn.svg" alt="agendar" />
           </button>
           <a :href="mapsUrl" target="_blank" rel="noopener noreferrer" class="details__btn">
@@ -117,6 +117,24 @@ const eventData = {
         border: none;
       }
     }
+  }
+}
+@include desktop {
+  .details-page {
+    height: -webkit-fill-available;
+    .details-page__content {
+      .wrapper-details {
+        width: fit-content;
+        .details {
+          width: 20%;
+          margin-left: 5%;
+          margin-top: 2%;
+        }
+      }
+    }
+  }
+  .details-page__directions {
+    width: 31%;
   }
 }
 </style>

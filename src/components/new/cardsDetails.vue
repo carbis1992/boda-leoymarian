@@ -6,7 +6,7 @@
 
       <a
         class="hide-btn"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSf6m3DPHKi7PUgGK0LbmGKEUI9oG7FetnTu-oAGhNPd14gUBw/viewform?usp=publish-editor"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfDkXTYUenf7EJ0ciFlxLktTxw-Hq2HJKbPzk5806DDv-gW2A/viewform?usp=sharing&ouid=110733723237711490684"
         target="_blank"
         rel="noopener noreferrer"
       ></a>
@@ -118,6 +118,14 @@
     transform: rotate(-10deg);
     z-index: 2;
     background-image: url(/src/assets/img/fondo-papel.jpeg);
+  }
+}
+@include desktop {
+  .cards-details-wrapper {
+    height: auto;
+  }
+  .cards-details-wrapper__card {
+    width: 25%;
   }
 }
 </style>
