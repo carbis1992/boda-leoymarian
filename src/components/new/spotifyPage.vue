@@ -5,14 +5,16 @@
       <div class="btn-spotify">
         <a :href="spotifyUrl" target="_blank" rel="noopener noreferrer"></a>
       </div>
-      <img src="/src/assets/img/spotify.svg" alt="spotify" />
+      <img src="/src/assets/img/spoti.svg" alt="spotify" />
     </div>
   </section>
 </template>
 <script setup>
 import { ref } from 'vue'
 
-const spotifyUrl = ref('https://open.spotify.com/playlist/3Li5QxraUSaqpXtsX4sa7P')
+const spotifyUrl = ref(
+  'https://open.spotify.com/playlist/2vvNjx549hyddowS9Tx8hv?si=wiXTAJiPR6O9BJWgW1v9-Q&utm_source=whatsapp&nd=1&dlsi=908d6f97e66840e3',
+)
 </script>
 <style lang="scss">
 @use '@/assets/abstracts' as *;

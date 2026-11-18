@@ -6,7 +6,11 @@
         src="/src/assets/img/save-our-date.svg"
         alt="save-our-date"
       />
-      <img style="width: 55%; margin: 0 auto" src="/src/assets/img/fecha.svg" alt="save-our-date" />
+      <img
+        style="width: 55%; margin: 0 auto"
+        src="/src/assets/img/fecha-home.svg"
+        alt="save-our-date"
+      />
     </div>
   </section>
 </template>

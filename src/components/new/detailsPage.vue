@@ -47,11 +47,11 @@ function toUTCString(dateStr) {
 }
 
 const eventData = {
-  title: 'Boda LyM',
+  title: 'Boda L&M',
   description: 'Boda Leo y Marian - Campos de Ibarlucea',
   location: '25 de Mayo 5306, Ibarlucea, Santa Fe',
   start: '2027-02-06T19:00:00',
-  end: '2027-02-07T03:00:00',
+  end: '2027-02-07T04:00:00',
 }
 </script>
 <style lang="scss" scoped>

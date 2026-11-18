@@ -2,59 +2,25 @@
   <section class="cards-details-wrapper">
     <div class="divider"><span></span></div>
     <div class="cards-details-wrapper__card card-1">
-      <div class="cards-details-wrapper__card__content">
-        <p class="title">
-          AYUDANOS CONFIRMANDO <span>tu</span> ASISTENCIA
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf6m3DPHKi7PUgGK0LbmGKEUI9oG7FetnTu-oAGhNPd14gUBw/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
-            >ACÁ</a
-          >
-        </p>
+      <img src="/src/assets/img/tarjeton-1.svg" alt="tarjeta1" />
 
-        <p class="disclaimer">
-          En caso de tener alguna alergia o restricción alimentartia, por favor, indicanos
-        </p>
-        <p class="footer">- Leo & Marian</p>
-      </div>
+      <a
+        class="hide-btn"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSf6m3DPHKi7PUgGK0LbmGKEUI9oG7FetnTu-oAGhNPd14gUBw/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+      ></a>
     </div>
     <div class="cards-details-wrapper__card card-2">
-      <div class="cards-details-wrapper__card__content">
-        <p class="title">
-          <span style="font-size: 35px">dress</span>CODE: <br />
-          <a href="#">FORMAL</a>
-          <br />
-        </p>
-        <p class="disclaimer">
-          <span class="dress">IMP:</span> evitar tonos blancos & derivados (colores pastel)
-        </p>
-      </div>
+      <img src="/src/assets/img/tarjeton-2.svg" alt="tarjeta2" />
     </div>
     <div class="cards-details-wrapper__card card-3">
-      <div class="cards-details-wrapper__card__content">
-        <p class="title">
-          TRASLADO <br />
-          <span>hacia</span> EL EVENTO
-        </p>
-
-        <p class="disclaimer">
-          Op. 01: (341) 5602 984 <CopyBtn copyText="+5493415602984" /> <br />
-          Op. 02: (341) 6892 897 <CopyBtn copyText="+5493416892897" /> <br />
-          Op. 03: (341) 6400 185 <CopyBtn copyText="+5493416400185" /> <br />
-        </p>
-        <p class="footer" style="font-size: 12px">
-          - les acercamos opciones, <br />
-          en caso de que les sea de ayuda -
-        </p>
-      </div>
+      <img src="/src/assets/img/tarjeton-3.svg" alt="tarjeta3" />
     </div>
     <div class="divider"><span style="height: 190px"></span></div>
   </section>
 </template>
-<script setup>
-import CopyBtn from '../copyBtn.vue'
-</script>
+<script setup></script>
 <style lang="scss" scoped>
 @use '@/assets/abstracts' as *;
 
@@ -78,7 +44,7 @@ import CopyBtn from '../copyBtn.vue'
   .divider {
     display: flex;
     justify-content: center;
-    height: 90px;
+    height: 75px;
     span {
       display: block;
       width: 0.5px;
@@ -88,10 +54,22 @@ import CopyBtn from '../copyBtn.vue'
   }
   &__card {
     width: 80%;
-    height: 25%;
+    height: 28%;
     margin: auto;
     border: 1px solid;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
+
+    .hide-btn {
+      position: absolute;
+      top: 38%;
+      left: 62%;
+      width: 75px;
+      height: 30px;
+
+      border: none;
+      background: none;
+      text-decoration: none;
+    }
 
     p {
       letter-spacing: 1px;
