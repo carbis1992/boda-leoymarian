@@ -2,7 +2,7 @@
   <section class="cards-details-wrapper">
     <div class="divider"><span></span></div>
     <div class="cards-details-wrapper__card card-1">
-      <img src="/src/assets/img/tarjeton-1.svg" alt="tarjeta1" />
+      <img src="/src/assets/img/card1.png" alt="tarjeta1" />
 
       <a
         class="hide-btn"
@@ -12,10 +12,10 @@
       ></a>
     </div>
     <div class="cards-details-wrapper__card card-2">
-      <img src="/src/assets/img/tarjeton-2.svg" alt="tarjeta2" />
+      <img src="/src/assets/img/card2.svg" alt="tarjeta2" />
     </div>
     <div class="cards-details-wrapper__card card-3">
-      <img src="/src/assets/img/tarjeton-3.svg" alt="tarjeta3" />
+      <img src="/src/assets/img/card3.svg" alt="tarjeta3" />
     </div>
     <div class="divider"><span style="height: 190px"></span></div>
   </section>
@@ -63,7 +63,7 @@
       top: 38%;
       left: 62%;
       width: 75px;
-      height: 30px;
+      height: 45px;
 
       border: none;
       background: none;
