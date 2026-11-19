@@ -3,7 +3,7 @@
     <div class="details-page__content">
       <div class="divider"><span style="height: 15vh"></span></div>
       <div class="wrapper-details">
-        <img class="details" src="/src/assets/img/lugar.svg" alt="save-our-date" />
+        <img class="details" src="/src/assets/img/lugar-peque.svg" alt="save-our-date" />
 
         <img src="/src/assets/img/back1.png" alt="imagen-salon" />
       </div>
