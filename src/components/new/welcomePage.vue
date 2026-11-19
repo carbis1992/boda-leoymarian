@@ -8,7 +8,7 @@
       />
       <img
         style="width: 55%; margin: 0 auto"
-        src="/src/assets/img/fecha-last.svg"
+        src="/src/assets/img/fecha-final.svg"
         alt="save-our-date"
       />
     </div>
