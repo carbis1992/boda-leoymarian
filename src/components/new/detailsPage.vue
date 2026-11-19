@@ -134,7 +134,7 @@ const eventData = {
     }
   }
   .details-page__directions {
-    width: 31%;
+    width: 25%;
   }
 }
 </style>
