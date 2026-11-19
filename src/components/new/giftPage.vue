@@ -2,7 +2,7 @@
   <section class="gift-section">
     <div class="gift-card">
       <div class="gift-card__content">
-       <img src="/src/assets/img/card-regalo.svg" alt="tarjeta">
+        <img src="/src/assets/img/card-regalo.svg" alt="tarjeta" />
       </div>
       <div class="popup-wrapper">
         <button class="close-popup" @click="clearPopup"><span></span></button>
@@ -18,22 +18,50 @@
         <img v-if="showModalPesos" src="/src/assets/img/pesos-popup.svg" alt="regalo" />
         <img v-if="showModalDolares" src="/src/assets/img/usd-popup.svg" alt="regalo" />
         <img v-if="showModalEuros" src="/src/assets/img/eur-popup.svg" alt="regalo" />
-        <button v-if="showModalPesos" class="copy-alias" style="    top: 55%;
-    right: 31%;
-    " @click="copyText('bodalym.', 'Alias')"><span></span></button>
+        <button
+          v-if="showModalPesos"
+          class="copy-alias"
+          style="top: 55%; right: 31%"
+          @click="copyText('bodalym.', 'Alias')"
+        >
+          <span></span>
+        </button>
 
-        <button v-if="showModalPesos" class="copy-alias" style="    top: 63%;
-    right: 21%;" @click="copyText('0000230305450046871520', 'CVU')"><span></span></button>
+        <button
+          v-if="showModalPesos"
+          class="copy-alias"
+          style="top: 63%; right: 21%"
+          @click="copyText('0000230305450046871520', 'CVU')"
+        >
+          <span></span>
+        </button>
 
-        <button v-if="showModalDolares" class="copy-alias" style="top: 55%;
-    right: 28%;" @click="copyText('bodalym.usd', 'Alias')"><span></span></button>
+        <button
+          v-if="showModalDolares"
+          class="copy-alias"
+          style="top: 55%; right: 28%"
+          @click="copyText('bodalym.usd', 'Alias')"
+        >
+          <span></span>
+        </button>
 
-        <button v-if="showModalDolares" style=" top: 63%;
-    right: 21%;" class="copy-alias" @click="copyText('3220001888027457910014', 'CBU')"><span></span></button>
+        <button
+          v-if="showModalDolares"
+          style="top: 63%; right: 21%"
+          class="copy-alias"
+          @click="copyText('3220001888027457910014', 'CBU')"
+        >
+          <span></span>
+        </button>
 
-        <button v-if="showModalEuros" class="copy-alias" style="        top: 55%;
-    right: 25%;" @click="copyText('BE94967415853514', 'IBAN')"><span></span></button>
-
+        <button
+          v-if="showModalEuros"
+          class="copy-alias"
+          style="top: 55%; right: 25%"
+          @click="copyText('BE94967415853514', 'IBAN')"
+        >
+          <span></span>
+        </button>
       </div>
     </div>
 
@@ -121,7 +149,7 @@ const copyText = async (text, itemType) => {
   background-size: cover;
 
   &__content {
-        width: 70%;
+    width: 65%;
     padding-top: 9%;
     transform: rotate(-6deg);
 
