@@ -75,8 +75,8 @@ const spotifyUrl = ref(
     height: 40px;
     a {
       display: block;
-          height: 40px;
-          width: 72px;
+      height: 40px;
+      width: 80px;
     }
   }
 }
