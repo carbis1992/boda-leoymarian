@@ -5,7 +5,10 @@
       <div class="btn-spotify">
         <a :href="spotifyUrl" target="_blank" rel="noopener noreferrer"></a>
       </div>
-      <img src="/src/assets/img/spoti.svg" alt="spotify" />
+      <img src="/src/assets/img/spoti1.svg" alt="spotify" />
+      <div class="btn-spotify2">
+        <a :href="spotifyUrl" target="_blank" rel="noopener noreferrer"></a>
+      </div>
     </div>
   </section>
 </template>
@@ -62,6 +65,18 @@ const spotifyUrl = ref(
       display: block;
       width: 62px;
       height: 58px;
+    }
+  }
+
+  .btn-spotify2 {
+    position: absolute;
+    bottom: 16%;
+    left: 27%;
+    height: 40px;
+    a {
+      display: block;
+          height: 40px;
+          width: 72px;
     }
   }
 }
