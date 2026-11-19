@@ -2,16 +2,7 @@
   <section class="gift-section">
     <div class="gift-card">
       <div class="gift-card__content">
-        <p class="title">
-          TU PRESENCIA ES <br />
-          NUESTRO <span class="mejor">mejor</span> <br />
-          REGALO
-        </p>
-
-        <p class="disclaimer">
-          SIN EMBARGO, SI DESEAS TENER UN DETALLE CON NOSOTROS & AYUDARNOS CON NUESTRA LUNA DE MIEL,
-          PODÉS HACERLO A TRAVÉS DE LAS SIGUIENTES CUENTAS BANCARIAS:
-        </p>
+       <img src="/src/assets/img/card-regalo.svg" alt="tarjeta">
       </div>
       <div class="popup-wrapper">
         <button class="close-popup" @click="clearPopup"><span></span></button>
@@ -24,10 +15,21 @@
         >
           {{ copyToast }}
         </p>
-        <img v-if="showModalPesos" src="/src/assets/img/popup-pesos.svg" alt="regalo" />
-        <img v-if="showModalDolares" src="/src/assets/img/popup-dol.svg" alt="regalo" />
-        <img v-if="showModalEuros" src="/src/assets/img/popup-eur.svg" alt="regalo" />
-        <button v-if="activeCopyText" class="copy-alias" @click="copyText"><span></span></button>
+        <img v-if="showModalPesos" src="/src/assets/img/pesos-popup.svg" alt="regalo" />
+        <img v-if="showModalDolares" src="/src/assets/img/usd-popup.svg" alt="regalo" />
+        <img v-if="showModalEuros" src="/src/assets/img/eur-popup.svg" alt="regalo" />
+        <button v-if="showModalPesos" class="copy-alias" style="    right: 118px;
+    top: 139px;
+    " @click="copyText('bodalym.', 'Alias')"><span></span></button>
+        <button v-if="showModalPesos" class="copy-alias" style="top: 159px;
+    right: 75px;" @click="copyText('0000230305450046871520', 'CVU')"><span></span></button>
+        <button v-if="showModalDolares" class="copy-alias" style="top: 141px;
+    right: 105px;" @click="copyText('bodalym.usd', 'Alias')"><span></span></button>
+        <button v-if="showModalDolares" style="    top: 160px;
+    right: 76px;" class="copy-alias" @click="copyText('3220001888027457910014', 'CBU')"><span></span></button>
+        <button v-if="showModalEuros" class="copy-alias" style="    top: 142px;
+    right: 95px;" @click="copyText('BE94967415853514', 'IBAN')"><span></span></button>
+
       </div>
     </div>
 
@@ -46,20 +48,13 @@
   </section>
 </template>
 <script setup>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 const showModalPesos = ref(false)
 const showModalDolares = ref(false)
 const showModalEuros = ref(false)
 const copyToast = ref('')
 let toastTimeout = 0
-
-const activeCopyText = computed(() => {
-  if (showModalPesos.value) return 'bodalym.'
-  if (showModalDolares.value) return 'bodalym.usd'
-  if (showModalEuros.value) return 'BE94967415853514'
-  return ''
-})
 
 const showPesosModal = () => {
   showModalDolares.value = false
@@ -84,13 +79,10 @@ const clearPopup = () => {
   showModalEuros.value = false
 }
 
-const copyText = async () => {
-  const text = activeCopyText.value
-  if (!text) return
-
+const copyText = async (text, itemType) => {
   try {
     await navigator.clipboard.writeText(text)
-    copyToast.value = showModalEuros.value ? 'IBAN copiado' : 'Alias copiado al portapapeles'
+    copyToast.value = `${itemType} copiado`
   } catch (error) {
     console.error('Error al copiar el texto: ', error)
     copyToast.value = 'No se pudo copiar el texto'
@@ -99,7 +91,7 @@ const copyText = async () => {
   window.clearTimeout(toastTimeout)
   toastTimeout = window.setTimeout(() => {
     copyToast.value = ''
-  }, 1500)
+  }, 1200)
 }
 </script>
 <style lang="scss" scoped>
@@ -121,22 +113,13 @@ const copyText = async () => {
 }
 .gift-card {
   background-image: url(/src/assets/img/zocalo-regalo.svg);
-  /* width: 100%; */
-  height: 300px;
+  height: 235px;
   background-size: cover;
 
   &__content {
-    width: 80%;
-    margin: auto;
-    padding-top: 24%;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-evenly; */
-    height: stretch;
+        width: 70%;
+    padding-top: 9%;
     transform: rotate(-6deg);
-    gap: 30px;
-    text-align: center;
-    align-items: flex-start;
 
     .disclaimer {
       font-size: 12px;
@@ -177,10 +160,8 @@ const copyText = async () => {
   }
   .copy-alias {
     position: absolute;
-    right: 78px;
-    width: 242px;
-    height: 160px;
-    top: 80px;
+    width: 30px;
+    height: 20px;
     border: none;
     background: none;
     span {
@@ -191,20 +172,17 @@ const copyText = async () => {
 }
 
 .copy-toast {
-  padding: 8px;
-  font-size: 16px;
+  padding: 4px;
+  font-size: 12px;
   background: rgba(236, 233, 227, 0.9);
   border-radius: 0.5rem;
   border: 0.5px solid;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   position: absolute;
   top: 75%;
-  left: 25%;
+  left: 40%;
 
   width: fit-content;
-}
-.copy-iban {
-  left: 37%;
 }
 .btn-gift {
   display: flex;
@@ -240,8 +218,6 @@ const copyText = async () => {
 
       .copy-alias {
         right: 127px;
-        width: 242px;
-        height: 247px;
         top: 121px;
         cursor: pointer;
       }
