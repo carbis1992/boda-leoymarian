@@ -18,17 +18,21 @@
         <img v-if="showModalPesos" src="/src/assets/img/pesos-popup.svg" alt="regalo" />
         <img v-if="showModalDolares" src="/src/assets/img/usd-popup.svg" alt="regalo" />
         <img v-if="showModalEuros" src="/src/assets/img/eur-popup.svg" alt="regalo" />
-        <button v-if="showModalPesos" class="copy-alias" style="    right: 118px;
-    top: 139px;
+        <button v-if="showModalPesos" class="copy-alias" style="    top: 55%;
+    right: 31%;
     " @click="copyText('bodalym.', 'Alias')"><span></span></button>
-        <button v-if="showModalPesos" class="copy-alias" style="top: 159px;
-    right: 75px;" @click="copyText('0000230305450046871520', 'CVU')"><span></span></button>
-        <button v-if="showModalDolares" class="copy-alias" style="top: 141px;
-    right: 105px;" @click="copyText('bodalym.usd', 'Alias')"><span></span></button>
-        <button v-if="showModalDolares" style="    top: 160px;
-    right: 76px;" class="copy-alias" @click="copyText('3220001888027457910014', 'CBU')"><span></span></button>
-        <button v-if="showModalEuros" class="copy-alias" style="    top: 142px;
-    right: 95px;" @click="copyText('BE94967415853514', 'IBAN')"><span></span></button>
+
+        <button v-if="showModalPesos" class="copy-alias" style="    top: 63%;
+    right: 21%;" @click="copyText('0000230305450046871520', 'CVU')"><span></span></button>
+
+        <button v-if="showModalDolares" class="copy-alias" style="top: 55%;
+    right: 28%;" @click="copyText('bodalym.usd', 'Alias')"><span></span></button>
+
+        <button v-if="showModalDolares" style=" top: 63%;
+    right: 21%;" class="copy-alias" @click="copyText('3220001888027457910014', 'CBU')"><span></span></button>
+
+        <button v-if="showModalEuros" class="copy-alias" style="        top: 55%;
+    right: 25%;" @click="copyText('BE94967415853514', 'IBAN')"><span></span></button>
 
       </div>
     </div>
