@@ -32,7 +32,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('/src/assets/img/fondo-foto2.jpeg');
+    background-image: url('/src/assets/img/fondo1.jpeg');
     background-position: center 45%;
     background-size: cover;
 
