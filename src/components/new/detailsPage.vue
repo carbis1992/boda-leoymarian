@@ -11,11 +11,22 @@
       <div class="details-page__directions">
         <div class="details-page__directions__buttons">
           <button @click="openGoogleCalendar" style="cursor: pointer">
-            <img src="/src/assets/img/agendar-btn.svg" alt="agendar" />
+            <img src="/src/assets/img/btn-agendar.svg" alt="agendar" />
           </button>
           <a :href="mapsUrl" target="_blank" rel="noopener noreferrer" class="details__btn">
-            <img src="/src/assets/img/como-llegar-btn.svg" alt="como-llegar" />
+            <img src="/src/assets/img/como-llego-btn.svg" alt="como-llegar" />
           </a>
+        </div>
+      </div>
+      <div class="details-page__directions" style="margin-top: 1rem; height: 50px">
+        <div class="details-page__directions__confirmar">
+          <img src="/src/assets/img/confirmar-img-final.svg" alt="confirmar-asistencia" />
+          <a
+            class="hide-btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfDkXTYUenf7EJ0ciFlxLktTxw-Hq2HJKbPzk5806DDv-gW2A/viewform?usp=sharing&ouid=110733723237711490684"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
         </div>
       </div>
       <div class="divider"><span style="height: 40vh"></span></div>
@@ -92,6 +103,13 @@ const eventData = {
       margin-top: 5%;
       margin-left: 12%;
     }
+    .hide-btn {
+      width: 90px;
+      height: 65px;
+      position: absolute;
+      top: 192%;
+      left: 60%;
+    }
   }
   &__directions {
     width: 90%;
@@ -116,6 +134,39 @@ const eventData = {
         background: none;
         border: none;
       }
+
+      .btn {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 4px;
+      }
+    }
+    &__confirmar {
+      border: 1px solid;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        border: none;
+      }
+    }
+  }
+  .asistencia {
+    display: block;
+    text-align: center;
+
+    .button-vip {
+      background: $color-primary;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 70px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
     }
   }
 }
@@ -135,6 +186,17 @@ const eventData = {
   }
   .details-page__directions {
     width: 25%;
+    &__confirmar {
+      padding: 4px;
+      img {
+        width: 90%;
+      }
+      .hide-btn {
+        width: 104px;
+        top: 205%;
+        left: 53%;
+      }
+    }
   }
 }
 </style>

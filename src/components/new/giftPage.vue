@@ -2,7 +2,7 @@
   <section class="gift-section">
     <div class="gift-card">
       <div class="gift-card__content">
-        <img src="/src/assets/img/card-regalo.svg" alt="tarjeta" />
+        <img src="/src/assets/img/last-regalo-tarjeta.svg" alt="tarjeta" />
       </div>
       <div class="popup-wrapper">
         <button class="close-popup" @click="clearPopup"><span></span></button>
@@ -67,14 +67,14 @@
 
     <div class="btn-gift">
       <button @click="showPesosModal" style="cursor: pointer">
-        <img src="/src/assets/img/cuenta-pesos.svg" alt="regalo" />
+        <img src="/src/assets/img/last-pesos-btn.svg" alt="regalo" />
       </button>
       <button @click="showDolaresModal" style="cursor: pointer">
-        <img src="/src/assets/img/cuenta-dol.svg" alt="regalo" />
+        <img src="/src/assets/img/last-btn-dol.svg" alt="regalo" />
       </button>
 
       <button @click="showEurosModal" style="cursor: pointer">
-        <img src="/src/assets/img/cuenta-eur.svg" alt="regalo" />
+        <img src="/src/assets/img/last-btn-eur.svg" alt="regalo" />
       </button>
     </div>
   </section>

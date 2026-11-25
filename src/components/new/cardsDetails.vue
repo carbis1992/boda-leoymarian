@@ -1,21 +1,12 @@
 <template>
   <section class="cards-details-wrapper">
     <div class="divider"><span></span></div>
-    <div class="cards-details-wrapper__card card-1">
-      <img src="/src/assets/img/card1.png" alt="tarjeta1" />
 
-      <a
-        class="hide-btn"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSfDkXTYUenf7EJ0ciFlxLktTxw-Hq2HJKbPzk5806DDv-gW2A/viewform?usp=sharing&ouid=110733723237711490684"
-        target="_blank"
-        rel="noopener noreferrer"
-      ></a>
-    </div>
     <div class="cards-details-wrapper__card card-2">
-      <img src="/src/assets/img/card2.svg" alt="tarjeta2" />
+      <img src="/src/assets/img/last-card2.svg" alt="tarjeta2" />
     </div>
     <div class="cards-details-wrapper__card card-3">
-      <img src="/src/assets/img/card3.svg" alt="tarjeta3" />
+      <img src="/src/assets/img/last-card3.svg" alt="tarjeta3" />
     </div>
     <div class="divider"><span style="height: 190px"></span></div>
   </section>
