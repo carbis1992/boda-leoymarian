@@ -150,8 +150,16 @@ const eventData = {
       display: flex;
       align-items: center;
       justify-content: center;
+      .hide-btn {
+        width: 90px;
+        height: 35px;
+        position: absolute;
+        top: 193%;
+        left: 60%;
+      }
       img {
         border: none;
+        width: 90%;
       }
     }
   }
@@ -192,6 +200,7 @@ const eventData = {
       }
       .hide-btn {
         width: 104px;
+        height: 61px;
         top: 205%;
         left: 53%;
       }
