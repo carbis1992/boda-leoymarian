@@ -29,7 +29,7 @@
           ></a>
         </div>
       </div>
-      <div class="divider"><span style="height: 40vh"></span></div>
+      <div class="divider"><span style="height: 20vh"></span></div>
     </div>
   </section>
 </template>
@@ -69,7 +69,6 @@ const eventData = {
 @use '@/assets/abstracts' as *;
 
 .details-page {
-  height: 100vh;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
     url(/src/assets/img/fondo-papel.jpeg);

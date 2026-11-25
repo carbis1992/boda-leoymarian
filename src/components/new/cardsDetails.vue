@@ -35,7 +35,7 @@
   .divider {
     display: flex;
     justify-content: center;
-    height: 75px;
+    height: 50px;
     span {
       display: block;
       width: 0.5px;

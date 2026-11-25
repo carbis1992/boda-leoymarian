@@ -32,10 +32,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('/src/assets/img/fondo-foto.jpeg');
+    background-image: url('/src/assets/img/fondo-foto1.jpeg');
     background-position: center 45%;
     background-size: cover;
-    filter: grayscale(100%) brightness(0.9);
 
     z-index: 0;
   }
