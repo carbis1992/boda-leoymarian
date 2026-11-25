@@ -18,15 +18,15 @@
           </a>
         </div>
       </div>
-      <div class="details-page__directions" style="margin-top: 1rem; height: 50px">
+      <div class="details-page__directions" style="margin-top: 1rem">
         <div class="details-page__directions__confirmar">
-          <img src="/src/assets/img/confirmar-img-final.svg" alt="confirmar-asistencia" />
           <a
-            class="hide-btn"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfDkXTYUenf7EJ0ciFlxLktTxw-Hq2HJKbPzk5806DDv-gW2A/viewform?usp=sharing&ouid=110733723237711490684"
             target="_blank"
             rel="noopener noreferrer"
-          ></a>
+          >
+            <img src="/src/assets/img/confirmar-img-final.svg" alt="confirmar-asistencia" />
+          </a>
         </div>
       </div>
       <div class="divider"><span style="height: 20vh"></span></div>
@@ -146,20 +146,14 @@ const eventData = {
     &__confirmar {
       border: 0.5px solid;
       width: 100%;
-      height: 100%;
+      height: 90%;
       display: flex;
       align-items: center;
       justify-content: center;
-      .hide-btn {
-        width: 90px;
-        height: 35px;
-        position: absolute;
-        top: 193%;
-        left: 60%;
-      }
+
       img {
         border: none;
-        width: 90%;
+        width: 100%;
       }
     }
   }
@@ -196,13 +190,7 @@ const eventData = {
     &__confirmar {
       padding: 4px;
       img {
-        width: 90%;
-      }
-      .hide-btn {
-        width: 104px;
-        height: 61px;
-        top: 205%;
-        left: 53%;
+        width: 100%;
       }
     }
   }
