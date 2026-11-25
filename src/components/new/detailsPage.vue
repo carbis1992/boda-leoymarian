@@ -106,7 +106,7 @@ const eventData = {
       width: 90px;
       height: 65px;
       position: absolute;
-      top: 192%;
+      top: 190%;
       left: 60%;
     }
   }
