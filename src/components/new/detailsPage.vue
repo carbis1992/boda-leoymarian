@@ -144,7 +144,7 @@ const eventData = {
       }
     }
     &__confirmar {
-      border: 1px solid;
+      border: 0.5px solid;
       width: 100%;
       height: 100%;
       display: flex;
